@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Our Memories ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,154 +15,241 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#000428,#004e92);
-color:white;
-text-align:center;
-overflow-x:hidden;
+
+font-family:'Poppins',sans-serif;
+
 min-height:100vh;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#141e30,
+#243b55,
+#0f2027
+);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+color:white;
+
 }
 
-/* Floating Hearts */
+/* Glow Background */
 
-.heart{
-position:fixed;
-font-size:22px;
-pointer-events:none;
-animation:floatUp linear infinite;
-opacity:.8;
+.glow{
+
+position:absolute;
+
+width:400px;
+height:400px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+filter:blur(100px);
+
+animation:moveGlow 10s infinite alternate;
+
 }
 
-@keyframes floatUp{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
+.glow:nth-child(1){
+top:-100px;
+left:-100px;
 }
 
-/* Header */
-
-.header{
-padding:30px 20px;
+.glow:nth-child(2){
+bottom:-100px;
+right:-100px;
 }
 
-.header h1{
-font-size:55px;
-color:gold;
-text-shadow:0 0 20px gold;
-margin-bottom:15px;
+@keyframes moveGlow{
+
+from{
+transform:translateY(0px);
 }
 
-.header p{
-font-size:24px;
-line-height:1.8;
+to{
+transform:translateY(50px);
 }
 
-/* Gallery */
+}
 
-.gallery{
+/* Main Container */
+
+.container{
+
 width:95%;
 max-width:1200px;
-margin:auto;
-padding:20px;
+
+text-align:center;
+
+z-index:2;
+
 }
 
-.gallery img{
+/* Title */
+
+.title{
+
+font-family:'Cinzel',serif;
+
+font-size:55px;
+
+margin-bottom:20px;
+
+text-shadow:
+0 0 20px rgba(255,255,255,.7);
+
+}
+
+/* Slideshow */
+
+.slideshow{
+
+position:relative;
+
 width:100%;
-height:75vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+/* Image */
+
+.slideshow img{
+
+width:400px;
+
+height:650px;
+
+max-width:90%;
+
 object-fit:contain;
-background:black;
+
 border-radius:25px;
-border:4px solid white;
+
+border:5px solid rgba(255,255,255,.8);
+
+background:black;
+
 box-shadow:
-0 0 20px gold,
-0 0 60px gold;
+0 0 25px rgba(255,255,255,.6),
+0 0 50px rgba(255,215,0,.4);
+
 transition:1s;
+
 }
 
 /* Caption */
 
 .caption{
+
+margin-top:25px;
+
 font-size:28px;
+
 font-weight:bold;
-color:gold;
-margin-top:20px;
+
+color:#ffe082;
+
 }
 
 /* Counter */
 
 .counter{
-font-size:22px;
+
 margin-top:10px;
-color:#fff;
+
+font-size:22px;
+
 }
 
-/* Text */
+/* Buttons */
 
-.memory{
-max-width:950px;
-margin:40px auto;
-padding:20px;
-font-size:24px;
-line-height:1.9;
+.buttons{
+
+margin-top:35px;
+
 }
-
-/* Audio */
-
-audio{
-margin-top:20px;
-width:80%;
-max-width:500px;
-}
-
-/* Button */
 
 button{
-padding:18px 45px;
-font-size:22px;
-border:none;
-border-radius:50px;
-cursor:pointer;
-background:linear-gradient(45deg,#ff4d6d,#ff758f);
-color:white;
+
+padding:16px 35px;
+
+font-size:20px;
+
 font-weight:bold;
-margin:40px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+margin:10px;
+
+background:white;
+
+color:#243b55;
+
 transition:.4s;
+
 }
 
 button:hover{
+
 transform:scale(1.08);
-box-shadow:0 0 25px #ff758f;
+
+box-shadow:
+0 0 20px white;
+
+}
+
+/* Hidden Audio */
+
+audio{
+display:none;
 }
 
 /* Mobile */
 
 @media(max-width:768px){
 
-.header h1{
-font-size:38px;
+.title{
+font-size:35px;
 }
 
-.header p{
+.slideshow img{
+height:500px;
+}
+
+.caption{
+font-size:22px;
+}
+
+.counter{
 font-size:18px;
 }
 
-.memory{
-font-size:18px;
-}
-
-.gallery img{
-height:60vh;
+button{
+font-size:16px;
+padding:14px 28px;
 }
 
 }
@@ -167,34 +258,24 @@ height:60vh;
 </head>
 <body>
 
-<audio id="player" autoplay controls></audio>
+<div class="glow"></div>
+<div class="glow"></div>
 
-<div class="header">
+<div class="container">
 
-<h1>❤️ Our Beautiful Memories ❤️</h1>
+<div class="title">
+❤️ Our Beautiful Memories ❤️
+</div>
 
-<p>
+<div class="slideshow">
 
-Every photo holds a piece of our story.
-
-Every memory brings you closer to me.
-
-Even though you are far away,
-you are always in my heart.
-
-❤️
-
-</p>
+<img id="slide" src="images/img1.jpeg">
 
 </div>
 
-<div class="gallery">
-
-<img id="slide" src="img1.jpeg">
-
 <div class="caption" id="caption">
 
-👶 Childhood Days
+👶 Childhood Memories
 
 </div>
 
@@ -204,84 +285,102 @@ you are always in my heart.
 
 </div>
 
-</div>
+<div class="buttons">
 
-<div class="memory">
+<button onclick="goBack()">
 
-Anna,
-
-These photos are not just pictures.
-
-They are moments of our lives.
-
-Moments that remind me of childhood laughter,
-family celebrations,
-funny memories,
-and the countless times we spent together.
-
-Now you are far away,
-living in another country.
-
-But whenever I look at these memories,
-it feels like you are right beside me.
-
-I miss you more than words can explain.
-
-❤️
-
-</div>
-
-<button onclick="window.location.href='letter.html'">
-
-💌 Read My Letter To Anna
+⬅ Back
 
 </button>
 
+<button onclick="goNext()">
+
+💌 Next
+
+</button>
+
+</div>
+
+</div>
+
+<audio id="musicPlayer"></audio>
+
 <script>
 
-/* Hearts */
-
-for(let i=0;i<40;i++){
-
-let heart=document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="❤️";
-
-heart.style.left=Math.random()*100+"%";
-
-heart.style.animationDuration=
-(6+Math.random()*8)+"s";
-
-heart.style.animationDelay=
-Math.random()*5+"s";
-
-document.body.appendChild(heart);
-
-}
-
-/* Music Playlist */
+/* Songs */
 
 const songs = [
 
-"song1.mpeg",
-"song2.mpeg",
-"song3.mpeg"
+"music/song1.mpeg",
+"music/song2.mpeg"
 
 ];
 
-const player = document.getElementById("player");
+/* Images */
+
+const images = [
+
+"images/img1.jpeg",
+"images/img2.jpeg",
+"images/img3.jpeg",
+"images/img4.jpeg",
+"images/img5.jpeg",
+"images/img6.jpeg",
+"images/img7.jpeg",
+"images/img8.jpeg",
+"images/img9.jpeg",
+"images/img10.jpeg",
+"images/img11.jpeg",
+"images/img12.jpeg"
+
+];
+
+/* Captions */
+
+const captions = [
+
+"👶 Childhood Memories",
+"🧸 Little Brother Moments",
+"🏠 Family Time",
+"🎉 Happy Days",
+"📚 School Memories",
+"😄 Funny Moments",
+"❤️ Precious Bond",
+"🌟 Growing Together",
+"🎊 Family Celebrations",
+"🤝 My Hero Anna",
+"✈️ Dreams Abroad",
+"🎂 Happy Birthday Anna"
+
+];
+
+const slide = document.getElementById("slide");
+const caption = document.getElementById("caption");
+const counter = document.getElementById("counter");
+
+/* Audio */
+
+const player = document.getElementById("musicPlayer");
 
 let currentSong = 0;
 
 player.src = songs[currentSong];
 
+player.play();
+
+/* Loop Songs Until Images End */
+
 player.addEventListener("ended",()=>{
 
 currentSong++;
 
-if(currentSong < songs.length){
+if(currentSong >= songs.length){
+
+currentSong = 0;
+
+}
+
+if(current < images.length-1){
 
 player.src = songs[currentSong];
 player.play();
@@ -290,64 +389,65 @@ player.play();
 
 });
 
-/* Images */
-
-const images = [
-
-"img1.jpeg",
-"img2.jpeg",
-"img3.jpeg",
-"img4.jpeg",
-"img5.jpeg",
-"img6.jpeg",
-"img7.jpeg",
-"img8.jpeg",
-"img9.jpeg",
-"img10.jpeg",
-"img11.jpeg",
-"img12.jpeg"
-
-];
-
-const captions = [
-
-"👶 Childhood Days",
-"🧸 Little Brother Memories",
-"🏠 Family Moments",
-"🎉 Happy Times Together",
-"📚 School Memories",
-"😄 Funny Moments",
-"❤️ Precious Bond",
-"🌟 Growing Together",
-"🎊 Family Celebrations",
-"🤝 My Hero Anna",
-"✈️ Chasing Dreams Abroad",
-"🎂 Happy Birthday Anna"
-
-];
+/* Slideshow */
 
 let current = 0;
 
-setInterval(()=>{
+const slideshow = setInterval(()=>{
 
 current++;
 
 if(current >= images.length){
 
-current = 0;
+clearInterval(slideshow);
+
+/* Stop Music After Last Image */
+
+player.pause();
+player.currentTime = 0;
+
+setTimeout(()=>{
+
+window.location.href="letter.html";
+
+},3000);
+
+return;
 
 }
 
-document.getElementById("slide").src =
-images[current];
+slide.src = images[current];
 
-document.getElementById("caption").innerHTML =
-captions[current];
+caption.innerHTML = captions[current];
 
-document.getElementById("counter").innerHTML =
-(current + 1) + " / " + images.length;
+counter.innerHTML =
+(current+1)+" / "+images.length;
 
 },6000);
+
+/* Back */
+
+function goBack(){
+
+player.pause();
+
+player.currentTime = 0;
+
+window.location.href = "index.html";
+
+}
+
+/* Next */
+
+function goNext(){
+
+player.pause();
+
+player.currentTime = 0;
+
+window.location.href = "letter.html";
+
+}
 
 </script>
 
