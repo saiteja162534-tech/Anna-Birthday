@@ -19,11 +19,10 @@ box-sizing:border-box;
 
 body{
 
-font-family:'Poppins',sans-serif;
+min-height:100vh;
 
-height:100vh;
-
-overflow:hidden;
+overflow-y:auto;
+overflow-x:hidden;
 
 display:flex;
 
@@ -31,22 +30,28 @@ justify-content:center;
 
 align-items:center;
 
+padding:20px;
+
+font-family:'Poppins',sans-serif;
+
 background:
 linear-gradient(
 135deg,
-#fff7f8,
-#ffeef5,
-#fdf0ff,
-#fff8ee
+#dbeafe,
+#e0f2fe,
+#f8fafc,
+#cbd5e1
 );
 
 position:relative;
 
 }
 
-/* Background Blur Shapes */
+/* Background Blur */
 
 .blur{
+
+pointer-events:none;
 
 position:absolute;
 
@@ -54,30 +59,30 @@ border-radius:50%;
 
 filter:blur(80px);
 
-opacity:.45;
+opacity:.4;
 
-animation:move 12s infinite alternate;
+animation:move 10s infinite alternate;
 
 }
 
 .blur1{
 
-width:300px;
-height:300px;
+width:320px;
+height:320px;
 
-background:#ffc2d1;
+background:#93c5fd;
 
-top:-80px;
-left:-80px;
+top:-100px;
+left:-100px;
 
 }
 
 .blur2{
 
-width:350px;
-height:350px;
+width:320px;
+height:320px;
 
-background:#d8b4fe;
+background:#bae6fd;
 
 bottom:-100px;
 right:-100px;
@@ -96,11 +101,13 @@ transform:translateY(40px);
 
 }
 
-/* Main Card */
+/* Main Container */
 
 .container{
 
-width:92%;
+margin:30px 0;
+
+width:100%;
 max-width:1100px;
 
 background:rgba(255,255,255,.45);
@@ -114,7 +121,7 @@ padding:35px;
 text-align:center;
 
 box-shadow:
-0 15px 40px rgba(255,182,193,.2);
+0 15px 40px rgba(0,0,0,.08);
 
 z-index:5;
 
@@ -126,9 +133,9 @@ z-index:5;
 
 font-family:'Great Vibes',cursive;
 
-font-size:70px;
+font-size:75px;
 
-color:#d46a92;
+color:#1e3a8a;
 
 margin-bottom:15px;
 
@@ -138,19 +145,19 @@ margin-bottom:15px;
 
 .subtitle{
 
-font-size:20px;
+font-size:22px;
 
-color:#866978;
+color:#475569;
 
 margin-bottom:30px;
+
+line-height:1.7;
 
 }
 
 /* Slideshow */
 
 .slideshow{
-
-position:relative;
 
 display:flex;
 
@@ -164,22 +171,26 @@ align-items:center;
 
 .slideshow img{
 
-width:380px;
+width:100%;
 
-height:580px;
+max-width:500px;
+
+height:auto;
+
+max-height:75vh;
 
 object-fit:contain;
 
-max-width:90%;
-
 background:white;
 
-border-radius:30px;
+border-radius:25px;
 
-padding:10px;
+padding:8px;
+
+border:4px solid rgba(255,255,255,.8);
 
 box-shadow:
-0 12px 30px rgba(255,182,193,.35);
+0 10px 30px rgba(0,0,0,.15);
 
 transition:1s;
 
@@ -191,11 +202,11 @@ transition:1s;
 
 margin-top:20px;
 
-font-size:26px;
+font-size:28px;
 
 font-weight:600;
 
-color:#b76e79;
+color:#1d4ed8;
 
 }
 
@@ -205,9 +216,9 @@ color:#b76e79;
 
 margin-top:10px;
 
-font-size:18px;
+font-size:19px;
 
-color:#7d6b75;
+color:#475569;
 
 }
 
@@ -216,6 +227,14 @@ color:#7d6b75;
 .buttons{
 
 margin-top:35px;
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:15px;
 
 }
 
@@ -233,19 +252,17 @@ font-weight:600;
 
 cursor:pointer;
 
-margin:10px;
-
 background:
 linear-gradient(
 135deg,
-#ff8fab,
-#ffc2d1
+#2563eb,
+#38bdf8
 );
 
 color:white;
 
 box-shadow:
-0 10px 25px rgba(255,143,171,.3);
+0 10px 25px rgba(37,99,235,.25);
 
 transition:.4s;
 
@@ -257,7 +274,7 @@ transform:translateY(-4px);
 
 }
 
-/* Audio Hidden */
+/* Audio */
 
 audio{
 display:none;
@@ -268,24 +285,32 @@ display:none;
 @media(max-width:768px){
 
 .title{
-font-size:50px;
+font-size:55px;
 }
 
 .subtitle{
-font-size:17px;
-}
-
-.slideshow img{
-height:480px;
+font-size:18px;
 }
 
 .caption{
 font-size:22px;
 }
 
+.counter{
+font-size:16px;
+}
+
 button{
 font-size:16px;
 padding:14px 28px;
+}
+
+.container{
+padding:25px 18px;
+}
+
+.slideshow img{
+max-height:65vh;
 }
 
 }
@@ -311,7 +336,7 @@ Every picture holds a beautiful memory ✨
 
 <div class="slideshow">
 
-<img id="slide" src="img1.jpeg">
+<img id="slide" src="images/img1.jpeg">
 
 </div>
 
@@ -376,14 +401,14 @@ const captions=[
 "🧸 Beautiful Memories",
 "🏡 Family Moments",
 "🎉 Happy Smiles",
-"📚 School Memories",
-"😄 Fun Times",
+"Uuforgotable Memories",
+"😄 Dream Places",
 "❤️ Precious Bond",
 "🌟 Growing Together",
-"🎊 Lovely Memories",
-"🤝 My Inspiration",
-"✈️ Dreams & Success",
-"🎂 Happy Birthday Anna"
+"🎊 Memories till my life",
+"🤝  Dreams & Succes",
+"✈️ My Inspiration More Than God",
+"🎂 Happy Birthday ANNA"
 
 ];
 
@@ -397,7 +422,9 @@ const songs=[
 ];
 
 const slide=document.getElementById("slide");
+
 const caption=document.getElementById("caption");
+
 const counter=document.getElementById("counter");
 
 /* Music */
@@ -410,7 +437,7 @@ player.src=songs[currentSong];
 
 player.play();
 
-/* Continue Songs Until Images End */
+/* Continue Songs */
 
 player.addEventListener("ended",()=>{
 
@@ -425,6 +452,7 @@ currentSong=0;
 if(current<images.length-1){
 
 player.src=songs[currentSong];
+
 player.play();
 
 }
@@ -446,9 +474,10 @@ clearInterval(slideshow);
 /* Stop Music */
 
 player.pause();
+
 player.currentTime=0;
 
-/* Auto Move Page 3 */
+/* Open Page 3 */
 
 setTimeout(()=>{
 
@@ -482,6 +511,7 @@ slide.style.opacity=1;
 function goBack(){
 
 player.pause();
+
 player.currentTime=0;
 
 window.location.href="index.html";
@@ -493,6 +523,7 @@ window.location.href="index.html";
 function goNext(){
 
 player.pause();
+
 player.currentTime=0;
 
 window.location.href="letter.html";
