@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Message For Anna ❤️</title>
+<title>For My Anna ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -25,45 +25,96 @@ min-height:100vh;
 
 overflow:hidden;
 
-background:
-linear-gradient(
-135deg,
-#0f0c29,
-#302b63,
-#24243e
-);
-
 display:flex;
 
 justify-content:center;
 
 align-items:center;
 
-position:relative;
+background:
+linear-gradient(
+135deg,
+#fff7f5,
+#ffeef2,
+#fdf4ff,
+#fff9f1
+);
 
-color:white;
+position:relative;
 
 }
 
-/* Main Box */
+/* Soft Background Glow */
+
+.glow{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(90px);
+
+opacity:.45;
+
+animation:moveGlow 10s infinite alternate;
+
+}
+
+.glow1{
+
+width:350px;
+height:350px;
+
+background:#ffc2d1;
+
+top:-120px;
+left:-100px;
+
+}
+
+.glow2{
+
+width:350px;
+height:350px;
+
+background:#d8b4fe;
+
+bottom:-120px;
+right:-100px;
+
+}
+
+@keyframes moveGlow{
+
+from{
+transform:translateY(0px);
+}
+
+to{
+transform:translateY(40px);
+}
+
+}
+
+/* Main Card */
 
 .container{
 
 width:90%;
 max-width:950px;
 
-padding:50px;
+padding:55px;
 
-background:rgba(255,255,255,.10);
+background:rgba(255,255,255,.45);
 
-backdrop-filter:blur(15px);
+backdrop-filter:blur(20px);
 
-border-radius:30px;
+border-radius:35px;
 
 text-align:center;
 
 box-shadow:
-0 0 30px rgba(255,255,255,.15);
+0 15px 40px rgba(255,182,193,.22);
 
 z-index:5;
 
@@ -75,14 +126,11 @@ z-index:5;
 
 font-family:'Great Vibes',cursive;
 
-font-size:75px;
+font-size:80px;
 
-margin-bottom:25px;
+color:#d46a92;
 
-color:#ffd700;
-
-text-shadow:
-0 0 20px gold;
+margin-bottom:20px;
 
 }
 
@@ -90,13 +138,15 @@ text-shadow:
 
 .message{
 
-font-size:24px;
+font-size:23px;
 
 line-height:2;
 
-margin-top:20px;
+color:#6d5b67;
 
 white-space:pre-line;
+
+margin-top:20px;
 
 }
 
@@ -108,25 +158,24 @@ margin-top:35px;
 
 font-size:38px;
 
-font-weight:bold;
+font-weight:600;
 
-color:#ffe082;
+color:#c06c84;
 
-animation:glow 2s infinite alternate;
+animation:glowText 2s infinite alternate;
 
 }
 
-@keyframes glow{
+@keyframes glowText{
 
 from{
 text-shadow:
-0 0 10px gold;
+0 0 10px rgba(255,143,171,.4);
 }
 
 to{
 text-shadow:
-0 0 25px gold,
-0 0 50px gold;
+0 0 25px rgba(255,143,171,.8);
 }
 
 }
@@ -135,7 +184,7 @@ text-shadow:
 
 .buttons{
 
-margin-top:40px;
+margin-top:35px;
 
 }
 
@@ -143,21 +192,27 @@ button{
 
 padding:16px 35px;
 
-font-size:20px;
-
-font-weight:bold;
-
 border:none;
 
 border-radius:50px;
 
+font-size:18px;
+
+font-weight:600;
+
 cursor:pointer;
 
-margin:10px;
+background:
+linear-gradient(
+135deg,
+#ff8fab,
+#ffc2d1
+);
 
-background:white;
+color:white;
 
-color:#302b63;
+box-shadow:
+0 10px 25px rgba(255,143,171,.3);
 
 transition:.4s;
 
@@ -165,14 +220,11 @@ transition:.4s;
 
 button:hover{
 
-transform:scale(1.08);
-
-box-shadow:
-0 0 25px white;
+transform:translateY(-4px);
 
 }
 
-/* Hidden Audio */
+/* Audio Hidden */
 
 audio{
 display:none;
@@ -201,7 +253,7 @@ z-index:1;
 @media(max-width:768px){
 
 .title{
-font-size:50px;
+font-size:55px;
 }
 
 .message{
@@ -218,11 +270,19 @@ font-size:16px;
 padding:14px 28px;
 }
 
+.container{
+padding:35px 25px;
+}
+
 }
 
 </style>
+
 </head>
 <body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
 
 <canvas id="fireworks"></canvas>
 
@@ -236,22 +296,21 @@ Happy Birthday Anna ❤️
 
 <div class="message">
 
-Write Your Own Birthday Message Here ❤️
-
-Example:
-
 Anna,
 
-No matter how far you are,
+No matter how far life takes you,
 you will always be close to my heart.
 
-I miss you every single day.
+I miss our memories,
+our laughter,
+and every little moment together.
 
-Thank you for always being my guide,
-my strength,
-and my inspiration.
+I am truly lucky to have a brother like you.
 
-I am lucky to have a brother like you.
+Wishing you endless happiness,
+success,
+love,
+and beautiful moments in life.
 
 Happy Birthday Anna ❤️
 
@@ -261,7 +320,7 @@ Happy Birthday Anna ❤️
 
 <div class="final">
 
-🎂 HAPPY BIRTHDAY ANNA 🎂
+🎂 Happy Birthday Anna 🎂
 
 </div>
 
@@ -278,32 +337,30 @@ Happy Birthday Anna ❤️
 </div>
 
 <audio id="emotionSong" autoplay loop>
-<source src="music/emotional.mpeg" type="audio/mpeg">
+<source src="emotional.mpeg" type="audio/mpeg">
 </audio>
 
 <script>
 
-/* Stop Song On Back */
+/* Back Button */
 
 function goBack(){
 
-const song =
-document.getElementById("emotionSong");
+const song=document.getElementById("emotionSong");
 
 song.pause();
 
-song.currentTime = 0;
+song.currentTime=0;
 
-window.location.href = "memories.html";
+window.location.href="memories.html";
 
 }
 
-/* Auto Play Music */
+/* Auto Play Song */
 
 window.addEventListener("load",()=>{
 
-const song =
-document.getElementById("emotionSong");
+const song=document.getElementById("emotionSong");
 
 song.play().catch(()=>{
 
@@ -319,43 +376,33 @@ song.play();
 
 /* Fireworks */
 
-const canvas =
-document.getElementById("fireworks");
+const canvas=document.getElementById("fireworks");
 
-const ctx =
-canvas.getContext("2d");
+const ctx=canvas.getContext("2d");
 
-canvas.width =
-window.innerWidth;
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
 
-canvas.height =
-window.innerHeight;
-
-let fireworks = [];
+let particles=[];
 
 function createFirework(){
 
-const x =
-Math.random()*canvas.width;
-
-const y =
-Math.random()*canvas.height/2;
+const x=Math.random()*canvas.width;
+const y=Math.random()*canvas.height/2;
 
 for(let i=0;i<70;i++){
 
-fireworks.push({
+particles.push({
 
 x:x,
 y:y,
 
 dx:(Math.random()-0.5)*8,
-
 dy:(Math.random()-0.5)*8,
 
 life:100,
 
-color:
-`hsl(${Math.random()*360},100%,60%)`
+color:`hsl(${Math.random()*360},100%,70%)`
 
 });
 
@@ -367,17 +414,11 @@ function animate(){
 
 requestAnimationFrame(animate);
 
-ctx.clearRect(
-0,
-0,
-canvas.width,
-canvas.height
-);
+ctx.clearRect(0,0,canvas.width,canvas.height);
 
-fireworks.forEach((p,index)=>{
+particles.forEach((p,index)=>{
 
 p.x += p.dx;
-
 p.y += p.dy;
 
 p.life--;
@@ -392,13 +433,13 @@ p.y,
 Math.PI*2
 );
 
-ctx.fillStyle = p.color;
+ctx.fillStyle=p.color;
 
 ctx.fill();
 
 if(p.life<=0){
 
-fireworks.splice(index,1);
+particles.splice(index,1);
 
 }
 
