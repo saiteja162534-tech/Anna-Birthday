@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Letter To My Anna ❤️</title>
+
+<title>Message For Anna ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,80 +15,88 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#0a0a0a,#1b1b4d,#000);
-color:white;
-overflow-x:hidden;
-text-align:center;
+
+font-family:'Poppins',sans-serif;
+
 min-height:100vh;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#0f0c29,
+#302b63,
+#24243e
+);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+color:white;
+
 }
 
-/* Floating Hearts */
+/* Main Box */
 
-.heart{
-position:fixed;
-font-size:24px;
-pointer-events:none;
-animation:floatUp linear infinite;
-opacity:.8;
-}
-
-@keyframes floatUp{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-}
-
-/* Header */
-
-.title{
-font-size:60px;
-color:gold;
-margin-top:40px;
-text-shadow:0 0 25px gold;
-}
-
-/* Letter Box */
-
-.letter-box{
+.container{
 
 width:90%;
-max-width:1000px;
+max-width:950px;
 
-margin:40px auto;
+padding:50px;
 
-padding:40px;
+background:rgba(255,255,255,.10);
 
-background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
 
-backdrop-filter:blur(12px);
+border-radius:30px;
 
-border-radius:25px;
+text-align:center;
 
-box-shadow:0 0 30px rgba(255,255,255,.15);
+box-shadow:
+0 0 30px rgba(255,255,255,.15);
+
+z-index:5;
 
 }
 
-#letter{
+/* Title */
+
+.title{
+
+font-family:'Great Vibes',cursive;
+
+font-size:75px;
+
+margin-bottom:25px;
+
+color:#ffd700;
+
+text-shadow:
+0 0 20px gold;
+
+}
+
+/* Message */
+
+.message{
 
 font-size:24px;
 
 line-height:2;
 
-text-align:left;
+margin-top:20px;
 
-white-space:pre-wrap;
+white-space:pre-line;
 
 }
 
@@ -92,11 +104,13 @@ white-space:pre-wrap;
 
 .final{
 
-font-size:45px;
+margin-top:35px;
 
-color:gold;
+font-size:38px;
 
-margin-top:40px;
+font-weight:bold;
+
+color:#ffe082;
 
 animation:glow 2s infinite alternate;
 
@@ -105,32 +119,81 @@ animation:glow 2s infinite alternate;
 @keyframes glow{
 
 from{
-opacity:.7;
+text-shadow:
+0 0 10px gold;
 }
 
 to{
-opacity:1;
-text-shadow:0 0 35px gold;
+text-shadow:
+0 0 25px gold,
+0 0 50px gold;
 }
 
 }
 
-.footer{
+/* Buttons */
 
-font-size:28px;
+.buttons{
 
-color:#ff7eb3;
-
-margin:40px;
+margin-top:40px;
 
 }
 
-/* Audio */
+button{
+
+padding:16px 35px;
+
+font-size:20px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+margin:10px;
+
+background:white;
+
+color:#302b63;
+
+transition:.4s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+0 0 25px white;
+
+}
+
+/* Hidden Audio */
 
 audio{
-margin-top:20px;
-width:80%;
-max-width:500px;
+display:none;
+}
+
+/* Fireworks Canvas */
+
+canvas{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+z-index:1;
+
 }
 
 /* Mobile */
@@ -138,23 +201,21 @@ max-width:500px;
 @media(max-width:768px){
 
 .title{
-font-size:38px;
+font-size:50px;
 }
 
-#letter{
+.message{
 font-size:18px;
-}
-
-.letter-box{
-padding:20px;
+line-height:1.8;
 }
 
 .final{
 font-size:28px;
 }
 
-.footer{
-font-size:22px;
+button{
+font-size:16px;
+padding:14px 28px;
 }
 
 }
@@ -163,204 +224,191 @@ font-size:22px;
 </head>
 <body>
 
-<audio autoplay controls loop>
-<source src="emotional.mpeg" type="audio/mpeg">
-</audio>
+<canvas id="fireworks"></canvas>
 
-<h1 class="title">
-💌 A Letter To My Anna 💌
-</h1>
+<div class="container">
 
-<div class="letter-box">
+<div class="title">
 
-<div id="letter"></div>
+Happy Birthday Anna ❤️
+
+</div>
+
+<div class="message">
+
+Write Your Own Birthday Message Here ❤️
+
+Example:
+
+Anna,
+
+No matter how far you are,
+you will always be close to my heart.
+
+I miss you every single day.
+
+Thank you for always being my guide,
+my strength,
+and my inspiration.
+
+I am lucky to have a brother like you.
+
+Happy Birthday Anna ❤️
+
+— Your Sai
 
 </div>
 
 <div class="final">
 
-❤️ HAPPY BIRTHDAY ANNA ❤️
-
-<br><br>
-
-No Matter How Far You Are,
-
-You Will Always Be In My Heart.
+🎂 HAPPY BIRTHDAY ANNA 🎂
 
 </div>
 
-<div class="footer">
+<div class="buttons">
 
-With Endless Love,
+<button onclick="goBack()">
 
-<br><br>
+⬅ Back
 
-Your Little Brother Sai ❤️
+</button>
 
 </div>
+
+</div>
+
+<audio id="emotionSong" autoplay loop>
+<source src="music/emotional.mpeg" type="audio/mpeg">
+</audio>
 
 <script>
 
-/* Floating Hearts */
+/* Stop Song On Back */
 
-for(let i=0;i<50;i++){
+function goBack(){
 
-let heart=document.createElement("div");
+const song =
+document.getElementById("emotionSong");
 
-heart.className="heart";
+song.pause();
 
-heart.innerHTML="❤️";
+song.currentTime = 0;
 
-heart.style.left=Math.random()*100+"%";
-
-heart.style.animationDuration =
-(6 + Math.random()*8) + "s";
-
-heart.style.animationDelay =
-Math.random()*5 + "s";
-
-document.body.appendChild(heart);
+window.location.href = "memories.html";
 
 }
 
-/* Typewriter Letter */
+/* Auto Play Music */
 
-const text = `
+window.addEventListener("load",()=>{
 
-Happy Birthday Anna ❤️
+const song =
+document.getElementById("emotionSong");
 
-Today is your special day.
+song.play().catch(()=>{
 
-While everyone celebrates your birthday with cakes, candles and wishes,
-I wanted to give you something from my heart.
+document.addEventListener("click",()=>{
 
-As I sit here writing this letter,
-thousands of memories come rushing back.
+song.play();
 
-Memories of our childhood.
+},{once:true});
 
-Memories of our laughter.
+});
 
-Memories of the times we spent together.
+});
 
-Back then,
-I never imagined there would be a day when you would be so far away.
+/* Fireworks */
 
-Now you are in another country,
-working hard,
-building your future,
-and chasing your dreams.
+const canvas =
+document.getElementById("fireworks");
 
-And Anna...
+const ctx =
+canvas.getContext("2d");
 
-I am truly proud of you.
+canvas.width =
+window.innerWidth;
 
-But at the same time,
-I miss you more than I can explain.
+canvas.height =
+window.innerHeight;
 
-I miss hearing your voice.
+let fireworks = [];
 
-I miss talking to you face to face.
+function createFirework(){
 
-I miss our silly conversations.
+const x =
+Math.random()*canvas.width;
 
-I miss our laughter.
+const y =
+Math.random()*canvas.height/2;
 
-I miss the feeling of having you nearby.
+for(let i=0;i<70;i++){
 
-Some days I look at our old photos and smile.
+fireworks.push({
 
-Other days those same photos make me emotional because they remind me how much I miss you.
+x:x,
+y:y,
 
-You have always been more than a brother to me.
+dx:(Math.random()-0.5)*8,
 
-You were my protector.
+dy:(Math.random()-0.5)*8,
 
-You were my guide.
+life:100,
 
-You were my teacher.
+color:
+`hsl(${Math.random()*360},100%,60%)`
 
-You were my inspiration.
-
-And most importantly...
-
-You were always there for me.
-
-Thank you for every sacrifice you made.
-
-Thank you for every lesson you taught me.
-
-Thank you for every time you supported me.
-
-Thank you for always believing in me.
-
-Distance may separate us physically.
-
-But distance can never separate our hearts.
-
-No country.
-
-No ocean.
-
-No number of miles.
-
-Can ever reduce the love and respect I have for you.
-
-On your birthday,
-I pray that happiness follows you wherever you go.
-
-May success walk beside you.
-
-May all your dreams come true.
-
-May God bless you with good health,
-peace,
-joy,
-and endless blessings.
-
-And one day,
-
-when we meet again,
-
-we will create even more beautiful memories together.
-
-Until that day comes,
-
-please remember this:
-
-You are loved.
-
-You are appreciated.
-
-You are missed.
-
-Every single day.
-
-❤️ Happy Birthday Anna ❤️
-
-Forever Your Little Brother,
-
-Sai ❤️
-
-`;
-
-let i = 0;
-
-function typeWriter(){
-
-if(i < text.length){
-
-document.getElementById("letter").innerHTML += text.charAt(i);
-
-i++;
-
-setTimeout(typeWriter,25);
+});
 
 }
 
 }
 
-typeWriter();
+function animate(){
+
+requestAnimationFrame(animate);
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+fireworks.forEach((p,index)=>{
+
+p.x += p.dx;
+
+p.y += p.dy;
+
+p.life--;
+
+ctx.beginPath();
+
+ctx.arc(
+p.x,
+p.y,
+3,
+0,
+Math.PI*2
+);
+
+ctx.fillStyle = p.color;
+
+ctx.fill();
+
+if(p.life<=0){
+
+fireworks.splice(index,1);
+
+}
+
+});
+
+}
+
+setInterval(createFirework,1200);
+
+animate();
 
 </script>
 
