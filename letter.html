@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For My Anna ❤️</title>
+<title>For My ANNA ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -19,11 +19,10 @@ box-sizing:border-box;
 
 body{
 
-font-family:'Poppins',sans-serif;
-
 min-height:100vh;
 
-overflow:hidden;
+overflow-y:auto;
+overflow-x:hidden;
 
 display:flex;
 
@@ -31,20 +30,24 @@ justify-content:center;
 
 align-items:center;
 
+padding:20px;
+
+font-family:'Poppins',sans-serif;
+
 background:
 linear-gradient(
 135deg,
-#fff7f5,
-#ffeef2,
-#fdf4ff,
-#fff9f1
+#dbeafe,
+#e0f2fe,
+#f8fafc,
+#cbd5e1
 );
 
 position:relative;
 
 }
 
-/* Soft Background Glow */
+/* Background Glow */
 
 .glow{
 
@@ -54,9 +57,11 @@ border-radius:50%;
 
 filter:blur(90px);
 
-opacity:.45;
+opacity:.4;
 
 animation:moveGlow 10s infinite alternate;
+
+pointer-events:none;
 
 }
 
@@ -65,7 +70,7 @@ animation:moveGlow 10s infinite alternate;
 width:350px;
 height:350px;
 
-background:#ffc2d1;
+background:#93c5fd;
 
 top:-120px;
 left:-100px;
@@ -77,7 +82,7 @@ left:-100px;
 width:350px;
 height:350px;
 
-background:#d8b4fe;
+background:#bae6fd;
 
 bottom:-120px;
 right:-100px;
@@ -100,10 +105,10 @@ transform:translateY(40px);
 
 .container{
 
-width:90%;
+width:100%;
 max-width:950px;
 
-padding:55px;
+padding:50px 35px;
 
 background:rgba(255,255,255,.45);
 
@@ -114,9 +119,11 @@ border-radius:35px;
 text-align:center;
 
 box-shadow:
-0 15px 40px rgba(255,182,193,.22);
+0 15px 40px rgba(0,0,0,.08);
 
 z-index:5;
+
+margin:30px 0;
 
 }
 
@@ -128,7 +135,7 @@ font-family:'Great Vibes',cursive;
 
 font-size:80px;
 
-color:#d46a92;
+color:#1e3a8a;
 
 margin-bottom:20px;
 
@@ -142,7 +149,7 @@ font-size:23px;
 
 line-height:2;
 
-color:#6d5b67;
+color:#475569;
 
 white-space:pre-line;
 
@@ -150,7 +157,7 @@ margin-top:20px;
 
 }
 
-/* Final Wish */
+/* Final Text */
 
 .final{
 
@@ -160,7 +167,7 @@ font-size:38px;
 
 font-weight:600;
 
-color:#c06c84;
+color:#2563eb;
 
 animation:glowText 2s infinite alternate;
 
@@ -170,12 +177,12 @@ animation:glowText 2s infinite alternate;
 
 from{
 text-shadow:
-0 0 10px rgba(255,143,171,.4);
+0 0 10px rgba(37,99,235,.25);
 }
 
 to{
 text-shadow:
-0 0 25px rgba(255,143,171,.8);
+0 0 25px rgba(37,99,235,.5);
 }
 
 }
@@ -205,14 +212,14 @@ cursor:pointer;
 background:
 linear-gradient(
 135deg,
-#ff8fab,
-#ffc2d1
+#2563eb,
+#38bdf8
 );
 
 color:white;
 
 box-shadow:
-0 10px 25px rgba(255,143,171,.3);
+0 10px 25px rgba(37,99,235,.25);
 
 transition:.4s;
 
@@ -224,13 +231,13 @@ transform:translateY(-4px);
 
 }
 
-/* Audio Hidden */
+/* Audio */
 
 audio{
 display:none;
 }
 
-/* Fireworks Canvas */
+/* Fireworks */
 
 canvas{
 
@@ -271,7 +278,7 @@ padding:14px 28px;
 }
 
 .container{
-padding:35px 25px;
+padding:35px 22px;
 }
 
 }
@@ -290,7 +297,7 @@ padding:35px 25px;
 
 <div class="title">
 
-Happy Birthday Anna ❤️
+Happy Birthday ANNA ❤️
 
 </div>
 
@@ -312,7 +319,7 @@ success,
 love,
 and beautiful moments in life.
 
-Happy Birthday Anna ❤️
+Happy Birthday ANNA ❤️
 
 — Your Sai
 
@@ -320,7 +327,7 @@ Happy Birthday Anna ❤️
 
 <div class="final">
 
-🎂 Happy Birthday Anna 🎂
+🎂 Happy Birthday ANNA 🎂
 
 </div>
 
@@ -381,6 +388,7 @@ const canvas=document.getElementById("fireworks");
 const ctx=canvas.getContext("2d");
 
 canvas.width=window.innerWidth;
+
 canvas.height=window.innerHeight;
 
 let particles=[];
@@ -388,6 +396,7 @@ let particles=[];
 function createFirework(){
 
 const x=Math.random()*canvas.width;
+
 const y=Math.random()*canvas.height/2;
 
 for(let i=0;i<70;i++){
@@ -398,11 +407,12 @@ x:x,
 y:y,
 
 dx:(Math.random()-0.5)*8,
+
 dy:(Math.random()-0.5)*8,
 
 life:100,
 
-color:`hsl(${Math.random()*360},100%,70%)`
+color:`hsl(${Math.random()*360},100%,65%)`
 
 });
 
@@ -419,6 +429,7 @@ ctx.clearRect(0,0,canvas.width,canvas.height);
 particles.forEach((p,index)=>{
 
 p.x += p.dx;
+
 p.y += p.dy;
 
 p.life--;
