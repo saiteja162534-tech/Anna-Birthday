@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Anna ❤️</title>
+
+<title>Happy Birthday Anna ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,63 +15,69 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
 }
 
 body{
+
 height:100vh;
+
 overflow:hidden;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#020024,#090979,#000000);
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(
+135deg,
+#ff416c,
+#ff4b2b,
+#ff758c
+);
+
 position:relative;
-color:white;
+
 }
 
-/* Stars */
+/* Floating Lights */
 
-.star{
+.light{
+
 position:absolute;
-width:3px;
-height:3px;
+
+width:8px;
+height:8px;
+
 background:white;
+
 border-radius:50%;
-animation:twinkle 2s infinite alternate;
+
+opacity:.7;
+
+animation:float 10s linear infinite;
+
 }
 
-@keyframes twinkle{
-from{
-opacity:.2;
-}
-to{
-opacity:1;
-box-shadow:0 0 15px white;
-}
-}
+@keyframes float{
 
-/* Hearts */
-
-.heart{
-position:absolute;
-font-size:22px;
-animation:floatUp linear infinite;
-opacity:.8;
-}
-
-@keyframes floatUp{
 0%{
 transform:translateY(100vh);
 opacity:0;
 }
+
 20%{
 opacity:1;
 }
+
 100%{
 transform:translateY(-120vh);
 opacity:0;
 }
+
 }
 
 /* Main Card */
@@ -75,81 +85,53 @@ opacity:0;
 .card{
 
 width:90%;
-max-width:950px;
+max-width:850px;
 
-padding:50px;
+padding:60px;
 
-background:rgba(255,255,255,0.08);
+background:rgba(255,255,255,.12);
 
 backdrop-filter:blur(12px);
 
 border-radius:30px;
 
-box-shadow:0 0 40px rgba(255,255,255,.2);
+text-align:center;
 
-z-index:10;
+box-shadow:
+0 0 30px rgba(255,255,255,.2);
 
-animation:fadeIn 2s ease;
+color:white;
 
-}
-
-@keyframes fadeIn{
-
-from{
-opacity:0;
-transform:translateY(30px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
+z-index:2;
 
 }
+
+/* Title */
 
 .title{
 
-font-size:65px;
+font-family:'Great Vibes',cursive;
 
-color:gold;
+font-size:90px;
 
-text-shadow:0 0 25px gold;
+margin-bottom:20px;
 
-margin-bottom:25px;
+text-shadow:
+0 0 20px rgba(255,255,255,.8);
 
 }
 
-.subtitle{
+/* Message */
+
+.message{
 
 font-size:28px;
 
-line-height:1.9;
-
-margin-bottom:30px;
+line-height:1.8;
 
 }
 
-.highlight{
-
-color:#ff7eb3;
-
-font-weight:bold;
-
-}
-
-.quote{
-
-font-size:24px;
-
-color:#ffd700;
-
-margin-top:20px;
-
-font-style:italic;
-
-line-height:1.7;
-
-}
+/* Button */
 
 button{
 
@@ -157,7 +139,9 @@ margin-top:40px;
 
 padding:18px 45px;
 
-font-size:24px;
+font-size:22px;
+
+font-weight:bold;
 
 border:none;
 
@@ -165,11 +149,9 @@ border-radius:50px;
 
 cursor:pointer;
 
-background:linear-gradient(45deg,#ff4d6d,#ff758f);
+background:white;
 
-color:white;
-
-font-weight:bold;
+color:#ff416c;
 
 transition:.4s;
 
@@ -179,9 +161,12 @@ button:hover{
 
 transform:scale(1.08);
 
-box-shadow:0 0 25px #ff758f;
+box-shadow:
+0 0 25px white;
 
 }
+
+/* Date */
 
 .date{
 
@@ -189,17 +174,7 @@ margin-top:30px;
 
 font-size:24px;
 
-color:gold;
-
-}
-
-.footer{
-
-margin-top:20px;
-
-font-size:20px;
-
-color:#ffb3c6;
+font-weight:bold;
 
 }
 
@@ -208,14 +183,10 @@ color:#ffb3c6;
 @media(max-width:768px){
 
 .title{
-font-size:42px;
+font-size:55px;
 }
 
-.subtitle{
-font-size:19px;
-}
-
-.quote{
+.message{
 font-size:18px;
 }
 
@@ -232,70 +203,35 @@ padding:15px 30px;
 
 <div class="card">
 
-<h1 class="title">
-❤️ Dear Anna ❤️
-</h1>
-
-<div class="subtitle">
-
-Even though you are far away in another country,
-
-you are always close to my heart.
-
-<br><br>
-
-Today is not just your birthday.
-
-Today is a celebration of the most important person in my life.
-
-The brother who protected me.
-
-The brother who guided me.
-
-The brother who inspired me.
-
-The brother who never stopped caring for me.
-
-<br><br>
-
-This little surprise contains memories,
-love,
-gratitude,
-and feelings that words alone can never fully express.
-
+<div class="title">
+Happy Birthday Anna ❤️
 </div>
 
-<div class="quote">
+<div class="message">
 
-"No matter how many miles separate us,
-you will always be my Anna,
-and I will always be your little brother."
+Wishing you happiness,
 
-❤️
+success,
+
+love,
+
+and endless joy on your special day.
+
+<br><br>
+
+A small surprise is waiting for you 🎁
 
 </div>
 
 <button onclick="window.location.href='memories.html'">
 
-🎁 Open My Surprise 🎁
+🎁 Open Surprise
 
 </button>
 
 <div class="date">
 
-🎂 23 June 2026 🎂
-
-</div>
-
-<div class="footer">
-
-Made with endless love by
-
-<br>
-
-<span class="highlight">
-Your Little Brother Sai ❤️
-</span>
+23 June 2026 🎂
 
 </div>
 
@@ -303,43 +239,23 @@ Your Little Brother Sai ❤️
 
 <script>
 
-/* Stars */
+/* Floating Lights */
 
-for(let i=0;i<200;i++){
+for(let i=0;i<120;i++){
 
-let star=document.createElement("div");
+let light=document.createElement("div");
 
-star.className="star";
+light.className="light";
 
-star.style.left=Math.random()*100+"%";
-star.style.top=Math.random()*100+"%";
+light.style.left=Math.random()*100+"%";
 
-star.style.animationDelay=
-Math.random()*2+"s";
+light.style.animationDuration=
+(5+Math.random()*10)+"s";
 
-document.body.appendChild(star);
-
-}
-
-/* Hearts */
-
-for(let i=0;i<35;i++){
-
-let heart=document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="❤️";
-
-heart.style.left=Math.random()*100+"%";
-
-heart.style.animationDuration=
-(6+Math.random()*8)+"s";
-
-heart.style.animationDelay=
+light.style.animationDelay=
 Math.random()*5+"s";
 
-document.body.appendChild(heart);
+document.body.appendChild(light);
 
 }
 
