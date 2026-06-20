@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Anna ❤️</title>
+<title>Happy Birthday ANNA ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -19,9 +19,7 @@ box-sizing:border-box;
 
 body{
 
-height:100vh;
-
-overflow:hidden;
+min-height:100vh;
 
 display:flex;
 
@@ -29,15 +27,19 @@ justify-content:center;
 
 align-items:center;
 
+padding:20px;
+
+overflow:hidden;
+
 font-family:'Poppins',sans-serif;
 
 background:
 linear-gradient(
 135deg,
-#fff6f0,
-#ffe5ec,
-#fbe7ff,
-#fff1dc
+#dbeafe,
+#e0f2fe,
+#f8fafc,
+#cbd5e1
 );
 
 position:relative;
@@ -78,27 +80,25 @@ opacity:0;
 
 }
 
-/* Main Card */
+/* Card */
 
 .card{
 
-width:90%;
+width:100%;
 max-width:850px;
 
-padding:70px 50px;
+padding:60px 40px;
 
 background:rgba(255,255,255,.45);
 
 backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.6);
 
 border-radius:35px;
 
 text-align:center;
 
 box-shadow:
-0 15px 40px rgba(255,182,193,.25);
+0 15px 40px rgba(0,0,0,.08);
 
 z-index:5;
 
@@ -110,35 +110,23 @@ z-index:5;
 
 font-family:'Great Vibes',cursive;
 
-font-size:95px;
+font-size:85px;
 
-color:#d46a92;
+color:#1e3a8a;
 
 margin-bottom:20px;
 
 }
 
-/* Subtitle */
+/* Message */
 
 .subtitle{
 
 font-size:24px;
 
-color:#7b5e70;
+color:#475569;
 
 line-height:1.8;
-
-font-weight:400;
-
-}
-
-/* Highlight */
-
-.highlight{
-
-color:#ff6f91;
-
-font-weight:600;
 
 }
 
@@ -146,7 +134,7 @@ font-weight:600;
 
 button{
 
-margin-top:45px;
+margin-top:40px;
 
 padding:18px 42px;
 
@@ -163,14 +151,14 @@ cursor:pointer;
 background:
 linear-gradient(
 135deg,
-#ff8fab,
-#ffc2d1
+#2563eb,
+#38bdf8
 );
 
 color:white;
 
 box-shadow:
-0 10px 25px rgba(255,143,171,.35);
+0 10px 25px rgba(37,99,235,.25);
 
 transition:.4s;
 
@@ -178,10 +166,7 @@ transition:.4s;
 
 button:hover{
 
-transform:translateY(-5px) scale(1.03);
-
-box-shadow:
-0 18px 35px rgba(255,143,171,.45);
+transform:translateY(-5px);
 
 }
 
@@ -189,45 +174,13 @@ box-shadow:
 
 .date{
 
-margin-top:35px;
+margin-top:30px;
 
 font-size:22px;
 
-color:#8a6572;
+color:#334155;
 
 font-weight:500;
-
-}
-
-/* Small Hearts */
-
-.heart{
-
-position:absolute;
-
-font-size:22px;
-
-animation:heartFloat 10s linear infinite;
-
-opacity:.7;
-
-}
-
-@keyframes heartFloat{
-
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-
-20%{
-opacity:1;
-}
-
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
 
 }
 
@@ -236,7 +189,7 @@ opacity:0;
 @media(max-width:768px){
 
 .title{
-font-size:60px;
+font-size:55px;
 }
 
 .subtitle{
@@ -253,7 +206,7 @@ font-size:18px;
 }
 
 .card{
-padding:50px 25px;
+padding:45px 25px;
 }
 
 }
@@ -266,20 +219,19 @@ padding:50px 25px;
 <div class="card">
 
 <div class="title">
-Happy Birthday Anna ❤️
+Happy Birthday ANNA ❤️
 </div>
 
 <div class="subtitle">
 
-Wishing you a day filled with
-
-<span class="highlight">love</span>,
-<span class="highlight">happiness</span>,
-and beautiful memories.
+Wishing you happiness,
+success,
+good health,
+and endless joy on your special day.
 
 <br><br>
 
-A little surprise is waiting for you ✨
+A small surprise is waiting for you 🎁
 
 </div>
 
@@ -299,7 +251,7 @@ A little surprise is waiting for you ✨
 
 <script>
 
-/* Floating Elegant Circles */
+/* Floating Circles */
 
 for(let i=0;i<25;i++){
 
@@ -321,28 +273,6 @@ circle.style.animationDelay=
 Math.random()*5+"s";
 
 document.body.appendChild(circle);
-
-}
-
-/* Floating Hearts */
-
-for(let i=0;i<20;i++){
-
-let heart=document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="🤍";
-
-heart.style.left=Math.random()*100+"%";
-
-heart.style.animationDuration=
-(8+Math.random()*10)+"s";
-
-heart.style.animationDelay=
-Math.random()*5+"s";
-
-document.body.appendChild(heart);
 
 }
 
