@@ -21,7 +21,6 @@ body{
 
 min-height:100vh;
 
-overflow-y:auto;
 overflow-x:hidden;
 
 display:flex;
@@ -47,17 +46,15 @@ position:relative;
 
 }
 
-/* Background Blur */
+/* Blur Background */
 
 .blur{
-
-pointer-events:none;
 
 position:absolute;
 
 border-radius:50%;
 
-filter:blur(80px);
+filter:blur(90px);
 
 opacity:.35;
 
@@ -67,8 +64,8 @@ animation:move 10s infinite alternate;
 
 .blur1{
 
-width:320px;
-height:320px;
+width:350px;
+height:350px;
 
 background:#93c5fd;
 
@@ -79,8 +76,8 @@ left:-100px;
 
 .blur2{
 
-width:320px;
-height:320px;
+width:350px;
+height:350px;
 
 background:#bae6fd;
 
@@ -101,22 +98,20 @@ transform:translateY(40px);
 
 }
 
-/* Main Container */
+/* Main Box */
 
 .container{
-
-margin:30px 0;
 
 width:95%;
 max-width:1300px;
 
+padding:35px;
+
 background:rgba(255,255,255,.45);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(18px);
 
 border-radius:35px;
-
-padding:35px;
 
 text-align:center;
 
@@ -133,30 +128,23 @@ z-index:5;
 
 font-family:'Cormorant Garamond',serif;
 
-font-size:80px;
-
-font-weight:600;
+font-size:75px;
 
 color:#1e3a8a;
 
-line-height:1.1;
+font-weight:600;
 
 }
-
-/* Anna */
 
 .anna{
 
 font-family:'Alex Brush',cursive;
 
-font-size:95px;
+font-size:90px;
 
 color:#2563eb;
 
 margin-top:5px;
-
-text-shadow:
-0 5px 15px rgba(37,99,235,.25);
 
 }
 
@@ -164,19 +152,17 @@ text-shadow:
 
 .subtitle{
 
+margin-top:20px;
+
 font-size:22px;
 
 color:#475569;
 
-margin-top:20px;
-
 margin-bottom:30px;
-
-line-height:1.7;
 
 }
 
-/* Slideshow */
+/* Image */
 
 .slideshow{
 
@@ -188,15 +174,11 @@ align-items:center;
 
 }
 
-/* Images */
-
 .slideshow img{
 
 width:100%;
 
 max-width:850px;
-
-height:auto;
 
 max-height:75vh;
 
@@ -204,9 +186,9 @@ object-fit:contain;
 
 background:white;
 
-border-radius:25px;
-
 padding:10px;
+
+border-radius:25px;
 
 border:4px solid rgba(255,255,255,.8);
 
@@ -227,7 +209,7 @@ font-size:28px;
 
 font-weight:600;
 
-color:#1d4ed8;
+color:#2563eb;
 
 }
 
@@ -237,7 +219,7 @@ color:#1d4ed8;
 
 margin-top:10px;
 
-font-size:19px;
+font-size:18px;
 
 color:#475569;
 
@@ -253,9 +235,9 @@ display:flex;
 
 justify-content:center;
 
-flex-wrap:wrap;
-
 gap:15px;
+
+flex-wrap:wrap;
 
 }
 
@@ -282,10 +264,10 @@ linear-gradient(
 
 color:white;
 
+transition:.4s;
+
 box-shadow:
 0 10px 25px rgba(37,99,235,.25);
-
-transition:.4s;
 
 }
 
@@ -294,8 +276,6 @@ button:hover{
 transform:translateY(-4px);
 
 }
-
-/* Audio */
 
 audio{
 display:none;
@@ -306,7 +286,7 @@ display:none;
 @media(max-width:768px){
 
 .title{
-font-size:55px;
+font-size:50px;
 }
 
 .anna{
@@ -321,17 +301,13 @@ font-size:18px;
 font-size:22px;
 }
 
-.counter{
-font-size:16px;
-}
-
 button{
 font-size:16px;
 padding:14px 28px;
 }
 
 .container{
-padding:25px 18px;
+padding:22px;
 }
 
 .slideshow img{
@@ -341,6 +317,7 @@ max-height:65vh;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -372,7 +349,7 @@ Every picture holds a beautiful memory ✨
 
 <div class="caption" id="caption">
 
-👶 Childhood pic
+👶 Childhood Pic
 
 </div>
 
@@ -428,9 +405,9 @@ const images=[
 
 const captions=[
 
-"👶 Childhood pic",
+"👶 Childhood Pic",
 "🧸 Beautiful Memories",
-"Best Brother Forever🫂",
+"🫂 Best Brother Forever",
 "🎉 Happy Smiles",
 "🥹 Unforgettable Memories",
 "😎 Simple Yet Special",
@@ -438,7 +415,7 @@ const captions=[
 "❤️ Precious Bond",
 "🌟 Growing Together",
 "🎊 Lovely Memories",
-"✈️ Emotional Time🥹",
+"✈️ Emotional Time",
 "🤝 Blood ❤️",
 "🎂 Happy Birthday Anna 👑"
 
@@ -465,11 +442,9 @@ let current=0;
 
 let currentSong=0;
 
-/* Start Song */
+/* Start Music */
 
 player.src=songs[currentSong];
-
-/* Mobile + PC Music */
 
 if(localStorage.getItem("musicAllowed")==="true"){
 
@@ -526,8 +501,6 @@ window.location.href="letter.html";
 return;
 
 }
-
-/* Fade Effect */
 
 slide.style.opacity=0;
 
