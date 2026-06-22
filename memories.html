@@ -442,17 +442,39 @@ let current=0;
 
 let currentSong=0;
 
-/* Start Music */
+/* =========================
+   MOBILE + PC AUDIO FIX
+========================= */
+
+/* Start First Song */
 
 player.src=songs[currentSong];
 
-if(localStorage.getItem("musicAllowed")==="true"){
+player.volume=1;
 
-player.play().catch(()=>{});
+/* Force Mobile Playback */
+
+document.body.addEventListener("click",startMusic,{once:true});
+
+document.body.addEventListener("touchstart",startMusic,{once:true});
+
+function startMusic(){
+
+player.play().then(()=>{
+
+console.log("Music Started");
+
+}).catch((err)=>{
+
+console.log(err);
+
+});
 
 }
 
-/* Song Loop */
+/* =========================
+   SONG LOOP
+========================= */
 
 player.addEventListener("ended",()=>{
 
@@ -468,13 +490,15 @@ if(current<images.length-1){
 
 player.src=songs[currentSong];
 
-player.play().catch(()=>{});
+player.play();
 
 }
 
 });
 
-/* Slideshow */
+/* =========================
+   SLIDESHOW
+========================= */
 
 const slideshow=setInterval(()=>{
 
@@ -502,6 +526,8 @@ return;
 
 }
 
+/* Fade */
+
 slide.style.opacity=0;
 
 setTimeout(()=>{
@@ -519,7 +545,9 @@ slide.style.opacity=1;
 
 },5000);
 
-/* Back */
+/* =========================
+   BACK BUTTON
+========================= */
 
 function goBack(){
 
@@ -531,7 +559,9 @@ window.location.href="index.html";
 
 }
 
-/* Next */
+/* =========================
+   NEXT BUTTON
+========================= */
 
 function goNext(){
 
