@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Memories ❤️</title>
+<title>Beautiful Memories ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -143,13 +143,13 @@ line-height:1.1;
 
 }
 
-/* ANNA */
+/* Anna */
 
 .anna{
 
 font-family:'Alex Brush',cursive;
 
-font-size:90px;
+font-size:95px;
 
 color:#2563eb;
 
@@ -310,7 +310,7 @@ font-size:55px;
 }
 
 .anna{
-font-size:65px;
+font-size:70px;
 }
 
 .subtitle{
@@ -342,6 +342,7 @@ max-height:65vh;
 
 </style>
 </head>
+
 <body>
 
 <div class="blur blur1"></div>
@@ -371,7 +372,7 @@ Every picture holds a beautiful memory ✨
 
 <div class="caption" id="caption">
 
-👶 Childhood Days
+👶 Childhood pic
 
 </div>
 
@@ -431,15 +432,15 @@ const captions=[
 "🧸 Beautiful Memories",
 "Best Brother Forever🫂",
 "🎉 Happy Smiles",
-" 🥹unforgotable Memories",
-"Simple Yet Special😎",
-"🥰Dream Place ",
+"🥹 Unforgettable Memories",
+"😎 Simple Yet Special",
+"🥰 Dream Place",
 "❤️ Precious Bond",
 "🌟 Growing Together",
-"🎊 Lovely Memories ",
-"✈️ Emotinal time🥹",
-"🤝 blood❤️ ",
-"🎂 Happy Birthday Anna👑"
+"🎊 Lovely Memories",
+"✈️ Emotional Time🥹",
+"🤝 Blood ❤️",
+"🎂 Happy Birthday Anna 👑"
 
 ];
 
@@ -460,11 +461,15 @@ const counter=document.getElementById("counter");
 
 const player=document.getElementById("musicPlayer");
 
+let current=0;
+
 let currentSong=0;
+
+/* Start Song */
 
 player.src=songs[currentSong];
 
-/* Mobile + PC Audio */
+/* Mobile + PC Music */
 
 if(localStorage.getItem("musicAllowed")==="true"){
 
@@ -496,8 +501,6 @@ player.play().catch(()=>{});
 
 /* Slideshow */
 
-let current=0;
-
 const slideshow=setInterval(()=>{
 
 current++;
@@ -523,6 +526,8 @@ window.location.href="letter.html";
 return;
 
 }
+
+/* Fade Effect */
 
 slide.style.opacity=0;
 
