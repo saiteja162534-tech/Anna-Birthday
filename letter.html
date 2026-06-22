@@ -385,15 +385,33 @@ window.location.href="memories.html";
 
 }
 
-/* Play Emotional Song */
+/* =========================
+   MOBILE + PC SONG FIX
+========================= */
 
 window.addEventListener("load",()=>{
 
 const song=document.getElementById("emotionSong");
 
-if(localStorage.getItem("musicAllowed")==="true"){
+song.volume=1;
 
-song.play().catch(()=>{});
+/* Mobile + PC */
+
+document.body.addEventListener("click",playEmotion,{once:true});
+
+document.body.addEventListener("touchstart",playEmotion,{once:true});
+
+function playEmotion(){
+
+song.play().then(()=>{
+
+console.log("Emotion Song Started");
+
+}).catch((err)=>{
+
+console.log(err);
+
+});
 
 }
 
