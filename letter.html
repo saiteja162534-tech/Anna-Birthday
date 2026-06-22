@@ -21,7 +21,6 @@ body{
 
 min-height:100vh;
 
-overflow-y:auto;
 overflow-x:hidden;
 
 display:flex;
@@ -47,7 +46,7 @@ position:relative;
 
 }
 
-/* Background Glow */
+/* Glow Background */
 
 .glow{
 
@@ -55,13 +54,11 @@ position:absolute;
 
 border-radius:50%;
 
-filter:blur(90px);
+filter:blur(100px);
 
 opacity:.35;
 
 animation:moveGlow 10s infinite alternate;
-
-pointer-events:none;
 
 }
 
@@ -101,14 +98,14 @@ transform:translateY(40px);
 
 }
 
-/* Main Card */
+/* Main Box */
 
 .container{
 
-width:100%;
+width:95%;
 max-width:1000px;
 
-padding:55px 35px;
+padding:50px 35px;
 
 background:rgba(255,255,255,.45);
 
@@ -123,8 +120,6 @@ box-shadow:
 
 z-index:5;
 
-margin:30px 0;
-
 }
 
 /* Title */
@@ -133,30 +128,23 @@ margin:30px 0;
 
 font-family:'Cormorant Garamond',serif;
 
-font-size:80px;
+font-size:75px;
 
 font-weight:600;
 
 color:#1e3a8a;
 
-line-height:1.1;
-
 }
-
-/* Anna Font */
 
 .anna{
 
 font-family:'Alex Brush',cursive;
 
-font-size:100px;
+font-size:95px;
 
 color:#2563eb;
 
 margin-top:5px;
-
-text-shadow:
-0 5px 15px rgba(37,99,235,.25);
 
 }
 
@@ -176,7 +164,7 @@ white-space:pre-line;
 
 }
 
-/* Final Text */
+/* Final Wish */
 
 .final{
 
@@ -237,10 +225,10 @@ linear-gradient(
 
 color:white;
 
+transition:.4s;
+
 box-shadow:
 0 10px 25px rgba(37,99,235,.25);
-
-transition:.4s;
 
 }
 
@@ -279,11 +267,11 @@ z-index:1;
 @media(max-width:768px){
 
 .title{
-font-size:52px;
+font-size:50px;
 }
 
 .anna{
-font-size:75px;
+font-size:70px;
 }
 
 .message{
@@ -301,7 +289,7 @@ padding:14px 28px;
 }
 
 .container{
-padding:35px 22px;
+padding:30px 20px;
 }
 
 }
@@ -309,6 +297,7 @@ padding:35px 22px;
 </style>
 
 </head>
+
 <body>
 
 <div class="glow glow1"></div>
@@ -328,7 +317,7 @@ Anna ❤️
 
 <div class="message">
 
-Anna,            
+Anna👑,           
   My big SUPPORTER.
   I'M so Pleased to have brother like You
   you're not only My brother,
@@ -346,13 +335,13 @@ I truly miss you so much every single day.
 The memories we created together
 will always stay in my heart forever.
 
-I am proud to have a brother like you.
+I am proud to have a brother like you❤️🫂
 
 May this birthday bring you happiness,
-and a big change in life  you're success is one thw way Anna ❤️ ,
-
-
-Happy Birthday Anna ❤️
+and a big change in our lifes you're success is one theway Anna ❤️ ,
+Always Be Happy🥹🥹
+  Without You I am Nothing                                                                                                                                                                                                your Happiness is my Happiness🥳 ,                                                                                                                                                                                       your Success is My Success,                                                                                                                                                                                              Just I need you with me 
+Happy Birthday Anna👑 ❤️
 
 — Your Sai
 
@@ -360,7 +349,7 @@ Happy Birthday Anna ❤️
 
 <div class="final">
 
-🎂 Happy Birthday Anna ❤️ 🎂
+🎂 Happy Birthday Anna 🎂
 
 </div>
 
@@ -396,7 +385,7 @@ window.location.href="memories.html";
 
 }
 
-/* Mobile + PC Audio */
+/* Play Emotional Song */
 
 window.addEventListener("load",()=>{
 
@@ -454,8 +443,6 @@ update(){
 
 this.y-=this.speed;
 
-/* Blast */
-
 if(this.y<=this.targetY){
 
 for(let i=0;i<120;i++){
@@ -490,7 +477,7 @@ ctx.fill();
 
 }
 
-/* Explosion Particles */
+/* Explosion */
 
 class Particle{
 
@@ -573,7 +560,7 @@ return p.update();
 
 }
 
-/* Launch Fireworks */
+/* Launch */
 
 setInterval(()=>{
 
