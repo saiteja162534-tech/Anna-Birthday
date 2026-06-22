@@ -21,23 +21,23 @@ body{
 
 height:100vh;
 
+overflow:hidden;
+
 display:flex;
 
 justify-content:center;
 
 align-items:center;
 
-overflow:hidden;
-
 font-family:'Poppins',sans-serif;
 
 background:
 linear-gradient(
 135deg,
+#c7d2fe,
 #dbeafe,
 #e0f2fe,
-#f8fafc,
-#cbd5e1
+#f8fafc
 );
 
 position:relative;
@@ -52,7 +52,7 @@ position:absolute;
 
 border-radius:50%;
 
-background:rgba(255,255,255,.35);
+background:rgba(255,255,255,.4);
 
 animation:float 15s linear infinite;
 
@@ -104,7 +104,7 @@ z-index:5;
 
 font-family:'Cormorant Garamond',serif;
 
-font-size:90px;
+font-size:85px;
 
 color:#1e3a8a;
 
@@ -227,6 +227,10 @@ A beautiful surprise is waiting for you 🎁
 
 </div>
 
+<audio id="startMusic">
+<source src="song1.mpeg" type="audio/mpeg">
+</audio>
+
 <script>
 
 /* Floating Background */
@@ -254,17 +258,26 @@ document.body.appendChild(circle);
 
 }
 
-/* Open Page 2 */
+/* Start Experience */
 
 function startExperience(){
 
-localStorage.setItem(
-"musicAllowed",
+const music=document.getElementById("startMusic");
+
+music.play().then(()=>{
+
+sessionStorage.setItem(
+"musicStarted",
 "true"
 );
 
-window.location.href=
-"memories.html";
+window.location.href="memories.html";
+
+}).catch(()=>{
+
+window.location.href="memories.html";
+
+});
 
 }
 
