@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday ANNA ❤️</title>
+<title>Happy Birthday Anna ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -54,7 +54,7 @@ position:absolute;
 
 border-radius:50%;
 
-background:rgba(255,255,255,.45);
+background:rgba(255,255,255,.4);
 
 backdrop-filter:blur(5px);
 
@@ -80,20 +80,20 @@ opacity:0;
 
 }
 
-/* Card */
+/* Main Card */
 
 .card{
 
 width:100%;
-max-width:850px;
+max-width:950px;
 
-padding:60px 40px;
+padding:70px 40px;
 
 background:rgba(255,255,255,.45);
 
 backdrop-filter:blur(18px);
 
-border-radius:35px;
+border-radius:40px;
 
 text-align:center;
 
@@ -104,29 +104,50 @@ z-index:5;
 
 }
 
-/* Title */
+/* Happy Birthday */
 
-.title{
+.happy{
 
-font-family:'Great Vibes',cursive;
+font-family:'Cormorant Garamond',serif;
 
-font-size:85px;
+font-size:95px;
+
+font-weight:600;
 
 color:#1e3a8a;
 
-margin-bottom:20px;
+line-height:1.1;
 
 }
 
-/* Message */
+/* ANNA Font */
+
+.anna{
+
+font-family:'Alex Brush',cursive;
+
+font-size:120px;
+
+color:#1d4ed8;
+
+margin-top:10px;
+
+text-shadow:
+0 5px 15px rgba(37,99,235,.25);
+
+}
+
+/* Subtitle */
 
 .subtitle{
 
+margin-top:25px;
+
 font-size:24px;
 
-color:#475569;
-
 line-height:1.8;
+
+color:#475569;
 
 }
 
@@ -188,8 +209,12 @@ font-weight:500;
 
 @media(max-width:768px){
 
-.title{
+.happy{
 font-size:55px;
+}
+
+.anna{
+font-size:85px;
 }
 
 .subtitle{
@@ -218,8 +243,12 @@ padding:45px 25px;
 
 <div class="card">
 
-<div class="title">
-Happy Birthday ANNA ❤️
+<div class="happy">
+Happy Birthday
+</div>
+
+<div class="anna">
+Anna ❤️
 </div>
 
 <div class="subtitle">
@@ -231,11 +260,11 @@ and endless joy on your special day.
 
 <br><br>
 
-A small surprise is waiting for you 🎁
+A beautiful surprise is waiting for you 🎁
 
 </div>
 
-<button onclick="window.location.href='memories.html'">
+<button onclick="startExperience()">
 
 🎁 Open Surprise
 
@@ -251,7 +280,17 @@ A small surprise is waiting for you 🎁
 
 <script>
 
-/* Floating Circles */
+/* Mobile + PC Audio Permission */
+
+function startExperience(){
+
+localStorage.setItem("musicAllowed","true");
+
+window.location.href="memories.html";
+
+}
+
+/* Floating Background */
 
 for(let i=0;i<25;i++){
 
