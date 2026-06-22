@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Memories ❤️</title>
+
+<title>Beautiful Memories ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,294 +15,372 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#000428,#004e92);
-color:white;
-text-align:center;
-overflow-x:hidden;
+
 min-height:100vh;
-}
 
-/* Floating Hearts */
+overflow-x:hidden;
 
-.heart{
-position:fixed;
-font-size:22px;
-pointer-events:none;
-animation:floatUp linear infinite;
-opacity:.8;
-}
+display:flex;
 
-@keyframes floatUp{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-}
+justify-content:center;
 
-/* Header */
+align-items:center;
 
-.header{
-padding:30px 20px;
-}
-
-.header h1{
-font-size:55px;
-color:gold;
-text-shadow:0 0 20px gold;
-margin-bottom:15px;
-}
-
-.header p{
-font-size:24px;
-line-height:1.8;
-}
-
-/* Gallery */
-
-.gallery{
-width:95%;
-max-width:1200px;
-margin:auto;
 padding:20px;
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(
+135deg,
+#c7d2fe,
+#dbeafe,
+#e0f2fe,
+#f8fafc
+);
+
+position:relative;
+
 }
 
-.gallery img{
-width:100%;
-height:75vh;
-object-fit:contain;
-background:black;
-border-radius:25px;
-border:4px solid white;
+/* Blur */
+
+.blur{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(90px);
+
+opacity:.35;
+
+animation:move 10s infinite alternate;
+
+}
+
+.blur1{
+
+width:350px;
+height:350px;
+
+background:#93c5fd;
+
+top:-100px;
+left:-100px;
+
+}
+
+.blur2{
+
+width:350px;
+height:350px;
+
+background:#bae6fd;
+
+bottom:-100px;
+right:-100px;
+
+}
+
+@keyframes move{
+
+from{
+transform:translateY(0px);
+}
+
+to{
+transform:translateY(40px);
+}
+
+}
+
+/* Container */
+
+.container{
+
+width:95%;
+max-width:1300px;
+
+padding:35px;
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(18px);
+
+border-radius:35px;
+
+text-align:center;
+
 box-shadow:
-0 0 20px gold,
-0 0 60px gold;
+0 15px 40px rgba(0,0,0,.08);
+
+z-index:5;
+
+}
+
+.title{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:75px;
+
+color:#1e3a8a;
+
+}
+
+.anna{
+
+font-family:'Alex Brush',cursive;
+
+font-size:95px;
+
+color:#2563eb;
+
+margin-top:5px;
+
+}
+
+.subtitle{
+
+margin-top:20px;
+
+font-size:22px;
+
+color:#475569;
+
+margin-bottom:30px;
+
+}
+
+/* Image */
+
+.slideshow{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.slideshow img{
+
+width:100%;
+
+max-width:850px;
+
+max-height:75vh;
+
+object-fit:contain;
+
+background:white;
+
+padding:10px;
+
+border-radius:25px;
+
+border:4px solid rgba(255,255,255,.8);
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.15);
+
 transition:1s;
+
 }
 
 /* Caption */
 
 .caption{
-font-size:28px;
-font-weight:bold;
-color:gold;
+
 margin-top:20px;
+
+font-size:28px;
+
+font-weight:600;
+
+color:#2563eb;
+
 }
 
 /* Counter */
 
 .counter{
-font-size:22px;
+
 margin-top:10px;
-color:#fff;
+
+font-size:18px;
+
+color:#475569;
+
 }
 
-/* Text */
+/* Buttons */
 
-.memory{
-max-width:950px;
-margin:40px auto;
-padding:20px;
-font-size:24px;
-line-height:1.9;
+.buttons{
+
+margin-top:35px;
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
 }
-
-/* Audio */
-
-audio{
-margin-top:20px;
-width:80%;
-max-width:500px;
-}
-
-/* Button */
 
 button{
-padding:18px 45px;
-font-size:22px;
+
+padding:16px 35px;
+
 border:none;
+
 border-radius:50px;
+
+font-size:18px;
+
+font-weight:600;
+
 cursor:pointer;
-background:linear-gradient(45deg,#ff4d6d,#ff758f);
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#38bdf8
+);
+
 color:white;
-font-weight:bold;
-margin:40px;
+
 transition:.4s;
+
+box-shadow:
+0 10px 25px rgba(37,99,235,.25);
+
 }
 
 button:hover{
-transform:scale(1.08);
-box-shadow:0 0 25px #ff758f;
+
+transform:translateY(-4px);
+
 }
 
 /* Mobile */
 
 @media(max-width:768px){
 
-.header h1{
-font-size:38px;
+.title{
+font-size:50px;
 }
 
-.header p{
+.anna{
+font-size:70px;
+}
+
+.subtitle{
 font-size:18px;
 }
 
-.memory{
-font-size:18px;
+.caption{
+font-size:22px;
 }
 
-.gallery img{
-height:60vh;
+button{
+font-size:16px;
+padding:14px 28px;
+}
+
+.container{
+padding:22px;
+}
+
+.slideshow img{
+max-height:65vh;
 }
 
 }
 
 </style>
+
 </head>
+
 <body>
 
-<audio id="player" autoplay controls></audio>
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
 
-<div class="header">
+<div class="container">
 
-<h1>❤️ Our Beautiful Memories ❤️</h1>
+<div class="title">
+Beautiful Memories
+</div>
 
-<p>
+<div class="anna">
+Anna ❤️
+</div>
 
-Every photo holds a piece of our story.
+<div class="subtitle">
 
-Every memory brings you closer to me.
-
-Even though you are far away,
-you are always in my heart.
-
-❤️
-
-</p>
+Every picture holds a beautiful memory ✨
 
 </div>
 
-<div class="gallery">
+<div class="slideshow">
 
 <img id="slide" src="img1.jpeg">
 
+</div>
+
 <div class="caption" id="caption">
 
-👶 Childhood Days
+👶 Childhood Pic
 
 </div>
 
 <div class="counter" id="counter">
 
-1 / 12
+1 / 13
 
 </div>
 
-</div>
+<div class="buttons">
 
-<div class="memory">
+<button onclick="goBack()">
 
-Anna,
-
-These photos are not just pictures.
-
-They are moments of our lives.
-
-Moments that remind me of childhood laughter,
-family celebrations,
-funny memories,
-and the countless times we spent together.
-
-Now you are far away,
-living in another country.
-
-But whenever I look at these memories,
-it feels like you are right beside me.
-
-I miss you more than words can explain.
-
-❤️
-
-</div>
-
-<button onclick="window.location.href='letter.html'">
-
-💌 Read My Letter To Anna
+⬅ Back
 
 </button>
 
+<button onclick="goNext()">
+
+💌 Next
+
+</button>
+
+</div>
+
+</div>
+
+<audio id="musicPlayer" hidden></audio>
+
 <script>
-
-/* Hearts */
-
-for(let i=0;i<40;i++){
-
-let heart=document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="❤️";
-
-heart.style.left=Math.random()*100+"%";
-
-heart.style.animationDuration=
-(6+Math.random()*8)+"s";
-
-heart.style.animationDelay=
-Math.random()*5+"s";
-
-document.body.appendChild(heart);
-
-}
-
-/* Music Playlist */
-
-const songs = [
-
-"song1.mpeg",
-"song2.mpeg",
-"song3.mpeg"
-
-];
-
-const player = document.getElementById("player");
-
-let currentSong = 0;
-
-player.src = songs[currentSong];
-
-player.addEventListener("ended",()=>{
-
-currentSong++;
-
-if(currentSong < songs.length){
-
-player.src = songs[currentSong];
-player.play();
-
-}
-
-});
 
 /* Images */
 
-const images = [
+const images=[
 
 "img1.jpeg",
 "img2.jpeg",
 "img3.jpeg",
 "img4.jpeg",
 "img5.jpeg",
+"img13.jpeg",
 "img6.jpeg",
 "img7.jpeg",
 "img8.jpeg",
@@ -309,45 +391,159 @@ const images = [
 
 ];
 
-const captions = [
+/* Captions */
 
-"👶 Childhood Days",
-"🧸 Little Brother Memories",
-"🏠 Family Moments",
-"🎉 Happy Times Together",
-"📚 School Memories",
-"😄 Funny Moments",
+const captions=[
+
+"👶 Childhood Pic",
+"🧸 Beautiful Memories",
+"🫂 Best Brother Forever",
+"🎉 Happy Smiles",
+"🥹 Unforgettable Memories",
+"😎 Simple Yet Special",
+"🥰 Dream Place",
 "❤️ Precious Bond",
 "🌟 Growing Together",
-"🎊 Family Celebrations",
-"🤝 My Hero Anna",
-"✈️ Chasing Dreams Abroad",
-"🎂 Happy Birthday Anna"
+"🎊 Lovely Memories",
+"✈️ Emotional Time",
+"🤝 Blood ❤️",
+"🎂 Happy Birthday Anna 👑"
 
 ];
 
-let current = 0;
+/* Songs */
 
-setInterval(()=>{
+const songs=[
 
-current++;
+"song1.mpeg",
+"song2.mpeg"
 
-if(current >= images.length){
+];
 
-current = 0;
+const slide=document.getElementById("slide");
+
+const caption=document.getElementById("caption");
+
+const counter=document.getElementById("counter");
+
+const player=document.getElementById("musicPlayer");
+
+let current=0;
+
+let currentSong=0;
+
+/* =========================
+   START MUSIC
+========================= */
+
+player.src=songs[currentSong];
+
+if(sessionStorage.getItem("musicStarted")==="true"){
+
+player.play().catch(()=>{});
 
 }
 
-document.getElementById("slide").src =
-images[current];
+/* =========================
+   SONG LOOP
+========================= */
 
-document.getElementById("caption").innerHTML =
-captions[current];
+player.addEventListener("ended",()=>{
 
-document.getElementById("counter").innerHTML =
-(current + 1) + " / " + images.length;
+currentSong++;
 
-},6000);
+if(currentSong>=songs.length){
+
+currentSong=0;
+
+}
+
+if(current<images.length-1){
+
+player.src=songs[currentSong];
+
+player.play().catch(()=>{});
+
+}
+
+});
+
+/* =========================
+   SLIDESHOW
+========================= */
+
+const slideshow=setInterval(()=>{
+
+current++;
+
+if(current>=images.length){
+
+clearInterval(slideshow);
+
+/* Stop Music */
+
+player.pause();
+
+player.currentTime=0;
+
+/* Open Page 3 */
+
+setTimeout(()=>{
+
+window.location.href="letter.html";
+
+},2500);
+
+return;
+
+}
+
+/* Fade */
+
+slide.style.opacity=0;
+
+setTimeout(()=>{
+
+slide.src=images[current];
+
+caption.innerHTML=captions[current];
+
+counter.innerHTML=
+(current+1)+" / "+images.length;
+
+slide.style.opacity=1;
+
+},400);
+
+},5000);
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+function goBack(){
+
+player.pause();
+
+player.currentTime=0;
+
+window.location.href="index.html";
+
+}
+
+/* =========================
+   NEXT BUTTON
+========================= */
+
+function goNext(){
+
+player.pause();
+
+player.currentTime=0;
+
+window.location.href="letter.html";
+
+}
 
 </script>
 
