@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Anna ❤️</title>
+
+<title>Happy Birthday Anna ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,143 +15,124 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
 }
 
 body{
+
 height:100vh;
+
 overflow:hidden;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#020024,#090979,#000000);
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(
+135deg,
+#c7d2fe,
+#dbeafe,
+#e0f2fe,
+#f8fafc
+);
+
 position:relative;
-color:white;
+
 }
 
-/* Stars */
+/* Floating Circles */
 
-.star{
+.circle{
+
 position:absolute;
-width:3px;
-height:3px;
-background:white;
+
 border-radius:50%;
-animation:twinkle 2s infinite alternate;
+
+background:rgba(255,255,255,.4);
+
+animation:float 15s linear infinite;
+
 }
 
-@keyframes twinkle{
-from{
-opacity:.2;
-}
-to{
-opacity:1;
-box-shadow:0 0 15px white;
-}
-}
+@keyframes float{
 
-/* Hearts */
-
-.heart{
-position:absolute;
-font-size:22px;
-animation:floatUp linear infinite;
-opacity:.8;
-}
-
-@keyframes floatUp{
 0%{
 transform:translateY(100vh);
 opacity:0;
 }
+
 20%{
 opacity:1;
 }
+
 100%{
 transform:translateY(-120vh);
 opacity:0;
 }
+
 }
 
-/* Main Card */
+/* Card */
 
 .card{
 
 width:90%;
-max-width:950px;
+max-width:900px;
 
-padding:50px;
+padding:60px 30px;
 
-background:rgba(255,255,255,0.08);
+background:rgba(255,255,255,.45);
 
-backdrop-filter:blur(12px);
+backdrop-filter:blur(18px);
 
-border-radius:30px;
+border-radius:35px;
 
-box-shadow:0 0 40px rgba(255,255,255,.2);
+text-align:center;
 
-z-index:10;
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
 
-animation:fadeIn 2s ease;
-
-}
-
-@keyframes fadeIn{
-
-from{
-opacity:0;
-transform:translateY(30px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
+z-index:5;
 
 }
 
 .title{
 
-font-size:65px;
+font-family:'Cormorant Garamond',serif;
 
-color:gold;
+font-size:85px;
 
-text-shadow:0 0 25px gold;
+color:#1e3a8a;
 
-margin-bottom:25px;
+font-weight:600;
+
+}
+
+.anna{
+
+font-family:'Alex Brush',cursive;
+
+font-size:110px;
+
+color:#2563eb;
+
+margin-top:10px;
 
 }
 
 .subtitle{
 
-font-size:28px;
-
-line-height:1.9;
-
-margin-bottom:30px;
-
-}
-
-.highlight{
-
-color:#ff7eb3;
-
-font-weight:bold;
-
-}
-
-.quote{
+margin-top:25px;
 
 font-size:24px;
 
-color:#ffd700;
+color:#475569;
 
-margin-top:20px;
-
-font-style:italic;
-
-line-height:1.7;
+line-height:1.8;
 
 }
 
@@ -155,51 +140,37 @@ button{
 
 margin-top:40px;
 
-padding:18px 45px;
-
-font-size:24px;
+padding:18px 40px;
 
 border:none;
 
 border-radius:50px;
 
+font-size:20px;
+
+font-weight:600;
+
 cursor:pointer;
 
-background:linear-gradient(45deg,#ff4d6d,#ff758f);
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#38bdf8
+);
 
 color:white;
 
-font-weight:bold;
-
 transition:.4s;
+
+box-shadow:
+0 10px 25px rgba(37,99,235,.25);
 
 }
 
 button:hover{
 
-transform:scale(1.08);
-
-box-shadow:0 0 25px #ff758f;
-
-}
-
-.date{
-
-margin-top:30px;
-
-font-size:24px;
-
-color:gold;
-
-}
-
-.footer{
-
-margin-top:20px;
-
-font-size:20px;
-
-color:#ffb3c6;
+transform:translateY(-4px);
 
 }
 
@@ -208,138 +179,105 @@ color:#ffb3c6;
 @media(max-width:768px){
 
 .title{
-font-size:42px;
+font-size:55px;
+}
+
+.anna{
+font-size:75px;
 }
 
 .subtitle{
-font-size:19px;
-}
-
-.quote{
 font-size:18px;
 }
 
 button{
-font-size:18px;
-padding:15px 30px;
+font-size:16px;
+padding:14px 28px;
 }
 
 }
 
 </style>
+
 </head>
+
 <body>
 
 <div class="card">
 
-<h1 class="title">
-❤️ Dear Anna ❤️
-</h1>
+<div class="title">
+Happy Birthday
+</div>
+
+<div class="anna">
+Anna ❤️
+</div>
 
 <div class="subtitle">
 
-Even though you are far away in another country,
-
-you are always close to my heart.
-
-<br><br>
-
-Today is not just your birthday.
-
-Today is a celebration of the most important person in my life.
-
-The brother who protected me.
-
-The brother who guided me.
-
-The brother who inspired me.
-
-The brother who never stopped caring for me.
-
-<br><br>
-
-This little surprise contains memories,
-love,
-gratitude,
-and feelings that words alone can never fully express.
+A beautiful surprise is waiting for you 🎁
 
 </div>
 
-<div class="quote">
+<button onclick="startExperience()">
 
-"No matter how many miles separate us,
-you will always be my Anna,
-and I will always be your little brother."
-
-❤️
-
-</div>
-
-<button onclick="window.location.href='memories.html'">
-
-🎁 Open My Surprise 🎁
+🎁 Open Surprise
 
 </button>
 
-<div class="date">
-
-🎂 23 June 2026 🎂
-
 </div>
 
-<div class="footer">
-
-Made with endless love by
-
-<br>
-
-<span class="highlight">
-Your Little Brother Sai ❤️
-</span>
-
-</div>
-
-</div>
+<audio id="startMusic">
+<source src="song1.mpeg" type="audio/mpeg">
+</audio>
 
 <script>
 
-/* Stars */
+/* Floating Background */
 
-for(let i=0;i<200;i++){
+for(let i=0;i<20;i++){
 
-let star=document.createElement("div");
+let circle=document.createElement("div");
 
-star.className="star";
+circle.className="circle";
 
-star.style.left=Math.random()*100+"%";
-star.style.top=Math.random()*100+"%";
+let size=Math.random()*100+30;
 
-star.style.animationDelay=
-Math.random()*2+"s";
+circle.style.width=size+"px";
+circle.style.height=size+"px";
 
-document.body.appendChild(star);
+circle.style.left=Math.random()*100+"%";
+
+circle.style.animationDuration=
+(10+Math.random()*10)+"s";
+
+circle.style.animationDelay=
+Math.random()*5+"s";
+
+document.body.appendChild(circle);
 
 }
 
-/* Hearts */
+/* Start Experience */
 
-for(let i=0;i<35;i++){
+function startExperience(){
 
-let heart=document.createElement("div");
+const music=document.getElementById("startMusic");
 
-heart.className="heart";
+music.play().then(()=>{
 
-heart.innerHTML="❤️";
+sessionStorage.setItem(
+"musicStarted",
+"true"
+);
 
-heart.style.left=Math.random()*100+"%";
+window.location.href="memories.html";
 
-heart.style.animationDuration=
-(6+Math.random()*8)+"s";
+}).catch(()=>{
 
-heart.style.animationDelay=
-Math.random()*5+"s";
+window.location.href="memories.html";
 
-document.body.appendChild(heart);
+});
 
 }
 
