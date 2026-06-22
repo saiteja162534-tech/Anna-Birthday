@@ -19,15 +19,13 @@ box-sizing:border-box;
 
 body{
 
-min-height:100vh;
+height:100vh;
 
 display:flex;
 
 justify-content:center;
 
 align-items:center;
-
-padding:20px;
 
 overflow:hidden;
 
@@ -54,9 +52,7 @@ position:absolute;
 
 border-radius:50%;
 
-background:rgba(255,255,255,.4);
-
-backdrop-filter:blur(5px);
+background:rgba(255,255,255,.35);
 
 animation:float 15s linear infinite;
 
@@ -65,7 +61,7 @@ animation:float 15s linear infinite;
 @keyframes float{
 
 0%{
-transform:translateY(100vh) rotate(0deg);
+transform:translateY(100vh);
 opacity:0;
 }
 
@@ -74,26 +70,26 @@ opacity:1;
 }
 
 100%{
-transform:translateY(-120vh) rotate(360deg);
+transform:translateY(-120vh);
 opacity:0;
 }
 
 }
 
-/* Main Card */
+/* Card */
 
 .card{
 
-width:100%;
-max-width:950px;
+width:90%;
+max-width:900px;
 
-padding:70px 40px;
+padding:60px 30px;
 
 background:rgba(255,255,255,.45);
 
 backdrop-filter:blur(18px);
 
-border-radius:40px;
+border-radius:35px;
 
 text-align:center;
 
@@ -104,40 +100,29 @@ z-index:5;
 
 }
 
-/* Happy Birthday */
-
-.happy{
+.title{
 
 font-family:'Cormorant Garamond',serif;
 
-font-size:95px;
-
-font-weight:600;
+font-size:90px;
 
 color:#1e3a8a;
 
-line-height:1.1;
+font-weight:600;
 
 }
-
-/* ANNA Font */
 
 .anna{
 
 font-family:'Alex Brush',cursive;
 
-font-size:120px;
+font-size:110px;
 
-color:#1d4ed8;
+color:#2563eb;
 
 margin-top:10px;
 
-text-shadow:
-0 5px 15px rgba(37,99,235,.25);
-
 }
-
-/* Subtitle */
 
 .subtitle{
 
@@ -145,19 +130,17 @@ margin-top:25px;
 
 font-size:24px;
 
-line-height:1.8;
-
 color:#475569;
 
-}
+line-height:1.8;
 
-/* Button */
+}
 
 button{
 
 margin-top:40px;
 
-padding:18px 42px;
+padding:18px 40px;
 
 border:none;
 
@@ -178,30 +161,16 @@ linear-gradient(
 
 color:white;
 
+transition:.4s;
+
 box-shadow:
 0 10px 25px rgba(37,99,235,.25);
-
-transition:.4s;
 
 }
 
 button:hover{
 
-transform:translateY(-5px);
-
-}
-
-/* Date */
-
-.date{
-
-margin-top:30px;
-
-font-size:22px;
-
-color:#334155;
-
-font-weight:500;
+transform:translateY(-4px);
 
 }
 
@@ -209,12 +178,12 @@ font-weight:500;
 
 @media(max-width:768px){
 
-.happy{
+.title{
 font-size:55px;
 }
 
 .anna{
-font-size:85px;
+font-size:75px;
 }
 
 .subtitle{
@@ -222,16 +191,8 @@ font-size:18px;
 }
 
 button{
-font-size:17px;
-padding:15px 28px;
-}
-
-.date{
-font-size:18px;
-}
-
-.card{
-padding:45px 25px;
+font-size:16px;
+padding:14px 28px;
 }
 
 }
@@ -239,11 +200,12 @@ padding:45px 25px;
 </style>
 
 </head>
+
 <body>
 
 <div class="card">
 
-<div class="happy">
+<div class="title">
 Happy Birthday
 </div>
 
@@ -252,13 +214,6 @@ Anna ❤️
 </div>
 
 <div class="subtitle">
-
-Wishing you happiness,
-success,
-good health,
-and endless joy on your special day.
-
-<br><br>
 
 A beautiful surprise is waiting for you 🎁
 
@@ -270,52 +225,19 @@ A beautiful surprise is waiting for you 🎁
 
 </button>
 
-<div class="date">
-
-23 June 2026 🎂
-
-</div>
-
 </div>
 
 <script>
 
-/* Mobile + PC Audio Permission */
-
-function startExperience(){
-
-const music=document.getElementById("startMusic");
-
-/* Start Music On Mobile */
-
-music.play().then(()=>{
-
-localStorage.setItem("musicAllowed","true");
-
-sessionStorage.setItem(
-"currentSong",
-"music/song1.mpeg"
-);
-
-window.location.href="memories.html";
-
-}).catch(()=>{
-
-window.location.href="memories.html";
-
-});
-
-}
-
 /* Floating Background */
 
-for(let i=0;i<25;i++){
+for(let i=0;i<20;i++){
 
 let circle=document.createElement("div");
 
 circle.className="circle";
 
-let size=Math.random()*120+40;
+let size=Math.random()*100+30;
 
 circle.style.width=size+"px";
 circle.style.height=size+"px";
@@ -323,7 +245,7 @@ circle.style.height=size+"px";
 circle.style.left=Math.random()*100+"%";
 
 circle.style.animationDuration=
-(10+Math.random()*15)+"s";
+(10+Math.random()*10)+"s";
 
 circle.style.animationDelay=
 Math.random()*5+"s";
@@ -332,10 +254,21 @@ document.body.appendChild(circle);
 
 }
 
+/* Open Page 2 */
+
+function startExperience(){
+
+localStorage.setItem(
+"musicAllowed",
+"true"
+);
+
+window.location.href=
+"memories.html";
+
+}
+
 </script>
-  <audio id="startMusic" loop>
-<source src="music/song1.mpeg" type="audio/mpeg">
-</audio>
 
 </body>
 </html>
