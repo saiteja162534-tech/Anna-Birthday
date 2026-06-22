@@ -36,17 +36,17 @@ font-family:'Poppins',sans-serif;
 background:
 linear-gradient(
 135deg,
+#c7d2fe,
 #dbeafe,
 #e0f2fe,
-#f8fafc,
-#cbd5e1
+#f8fafc
 );
 
 position:relative;
 
 }
 
-/* Blur Background */
+/* Blur */
 
 .blur{
 
@@ -98,7 +98,7 @@ transform:translateY(40px);
 
 }
 
-/* Main Box */
+/* Container */
 
 .container{
 
@@ -122,8 +122,6 @@ z-index:5;
 
 }
 
-/* Title */
-
 .title{
 
 font-family:'Cormorant Garamond',serif;
@@ -132,23 +130,19 @@ font-size:75px;
 
 color:#1e3a8a;
 
-font-weight:600;
-
 }
 
 .anna{
 
 font-family:'Alex Brush',cursive;
 
-font-size:90px;
+font-size:95px;
 
 color:#2563eb;
 
 margin-top:5px;
 
 }
-
-/* Subtitle */
 
 .subtitle{
 
@@ -277,10 +271,6 @@ transform:translateY(-4px);
 
 }
 
-audio{
-display:none;
-}
-
 /* Mobile */
 
 @media(max-width:768px){
@@ -377,7 +367,7 @@ Every picture holds a beautiful memory ✨
 
 </div>
 
-<audio id="musicPlayer"></audio>
+<audio id="musicPlayer" hidden></audio>
 
 <script>
 
@@ -443,32 +433,14 @@ let current=0;
 let currentSong=0;
 
 /* =========================
-   MOBILE + PC AUDIO FIX
+   START MUSIC
 ========================= */
-
-/* Start First Song */
 
 player.src=songs[currentSong];
 
-player.volume=1;
+if(sessionStorage.getItem("musicStarted")==="true"){
 
-/* Force Mobile Playback */
-
-document.body.addEventListener("click",startMusic,{once:true});
-
-document.body.addEventListener("touchstart",startMusic,{once:true});
-
-function startMusic(){
-
-player.play().then(()=>{
-
-console.log("Music Started");
-
-}).catch((err)=>{
-
-console.log(err);
-
-});
+player.play().catch(()=>{});
 
 }
 
@@ -490,7 +462,7 @@ if(current<images.length-1){
 
 player.src=songs[currentSong];
 
-player.play();
+player.play().catch(()=>{});
 
 }
 
