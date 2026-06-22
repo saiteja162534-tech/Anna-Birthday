@@ -36,10 +36,10 @@ font-family:'Poppins',sans-serif;
 background:
 linear-gradient(
 135deg,
+#c7d2fe,
 #dbeafe,
 #e0f2fe,
-#f8fafc,
-#cbd5e1
+#f8fafc
 );
 
 position:relative;
@@ -317,31 +317,57 @@ Anna ❤️
 
 <div class="message">
 
-Anna👑,           
+   Anna👑,           
+
   My big SUPPORTER.
+
   I'M so Pleased to have brother like You
+
   you're not only My brother,
-       you're also my friend my Supporter.
+
+       you're also my friend my guider.
+
   Words can't describe to share my love with you.
 
+
+
     you're always my HERO❤️
+
   A brother like You to have in my life is too blessed 
 
+
+
 No matter how far life takes you,
+
 you will always be close to my heart.
+
+
 
 I truly miss you so much every single day.
 
+
+
 The memories we created together
+
 will always stay in my heart forever.
+
+
 
 I am proud to have a brother like you❤️🫂
 
+
+
 May this birthday bring you happiness,
+
 and a big change in our lifes you're success is one theway Anna ❤️ ,
+
 Always Be Happy🥹🥹
+
   Without You I am Nothing                                                                                                                                                                                                your Happiness is my Happiness🥳 ,                                                                                                                                                                                       your Success is My Success,                                                                                                                                                                                              Just I need you with me 
+
 Happy Birthday Anna👑 ❤️
+
+
 
 — Your Sai
 
@@ -365,60 +391,41 @@ Happy Birthday Anna👑 ❤️
 
 </div>
 
-<audio id="emotionSong" loop>
+<audio id="emotionSong" loop hidden>
 <source src="emotional.mpeg" type="audio/mpeg">
 </audio>
 
 <script>
 
-/* Back Button */
+/* =========================
+   PLAY SONG
+========================= */
+
+const emotionSong=
+document.getElementById("emotionSong");
+
+if(sessionStorage.getItem("musicStarted")==="true"){
+
+emotionSong.play().catch(()=>{});
+
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
 
 function goBack(){
 
-const song=document.getElementById("emotionSong");
+emotionSong.pause();
 
-song.pause();
-
-song.currentTime=0;
+emotionSong.currentTime=0;
 
 window.location.href="memories.html";
 
 }
 
 /* =========================
-   MOBILE + PC SONG FIX
-========================= */
-
-window.addEventListener("load",()=>{
-
-const song=document.getElementById("emotionSong");
-
-song.volume=1;
-
-/* Mobile + PC */
-
-document.body.addEventListener("click",playEmotion,{once:true});
-
-document.body.addEventListener("touchstart",playEmotion,{once:true});
-
-function playEmotion(){
-
-song.play().then(()=>{
-
-console.log("Emotion Song Started");
-
-}).catch((err)=>{
-
-console.log(err);
-
-});
-
-}
-
-});
-
-/* =========================
-   DIWALI FIREWORKS
+   FIREWORKS
 ========================= */
 
 const canvas=document.getElementById("fireworks");
@@ -437,8 +444,6 @@ canvas.height=window.innerHeight;
 
 let fireworks=[];
 let particles=[];
-
-/* Firework Rocket */
 
 class Firework{
 
@@ -463,9 +468,10 @@ this.y-=this.speed;
 
 if(this.y<=this.targetY){
 
-for(let i=0;i<120;i++){
+for(let i=0;i<100;i++){
 
-particles.push(new Particle(
+particles.push(
+new Particle(
 this.x,
 this.y,
 this.color
@@ -495,8 +501,6 @@ ctx.fill();
 
 }
 
-/* Explosion */
-
 class Particle{
 
 constructor(x,y,color){
@@ -518,13 +522,13 @@ this.gravity=0.05;
 
 update(){
 
-this.x += Math.cos(this.angle)*this.speed;
+this.x+=Math.cos(this.angle)*this.speed;
 
-this.y += Math.sin(this.angle)*this.speed;
+this.y+=Math.sin(this.angle)*this.speed;
 
 this.speed*=0.97;
 
-this.y += this.gravity;
+this.y+=this.gravity;
 
 this.life--;
 
@@ -546,17 +550,18 @@ ctx.fill();
 
 }
 
-/* Animation */
-
 function animate(){
 
 requestAnimationFrame(animate);
 
 ctx.fillStyle="rgba(219,234,254,0.15)";
 
-ctx.fillRect(0,0,canvas.width,canvas.height);
-
-/* Fireworks */
+ctx.fillRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
 fireworks=fireworks.filter(fw=>{
 
@@ -565,8 +570,6 @@ fw.draw();
 return fw.update();
 
 });
-
-/* Particles */
 
 particles=particles.filter(p=>{
 
@@ -578,11 +581,11 @@ return p.update();
 
 }
 
-/* Launch */
-
 setInterval(()=>{
 
-fireworks.push(new Firework());
+fireworks.push(
+new Firework()
+);
 
 },500);
 
