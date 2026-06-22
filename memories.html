@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Memories ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#000428,#004e92);
+color:white;
+text-align:center;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+/* Floating Hearts */
+
+.heart{
+position:fixed;
+font-size:22px;
+pointer-events:none;
+animation:floatUp linear infinite;
+opacity:.8;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+/* Header */
+
+.header{
+padding:30px 20px;
+}
+
+.header h1{
+font-size:55px;
+color:gold;
+text-shadow:0 0 20px gold;
+margin-bottom:15px;
+}
+
+.header p{
+font-size:24px;
+line-height:1.8;
+}
+
+/* Gallery */
+
+.gallery{
+width:95%;
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.gallery img{
+width:100%;
+height:75vh;
+object-fit:contain;
+background:black;
+border-radius:25px;
+border:4px solid white;
+box-shadow:
+0 0 20px gold,
+0 0 60px gold;
+transition:1s;
+}
+
+/* Caption */
+
+.caption{
+font-size:28px;
+font-weight:bold;
+color:gold;
+margin-top:20px;
+}
+
+/* Counter */
+
+.counter{
+font-size:22px;
+margin-top:10px;
+color:#fff;
+}
+
+/* Text */
+
+.memory{
+max-width:950px;
+margin:40px auto;
+padding:20px;
+font-size:24px;
+line-height:1.9;
+}
+
+/* Audio */
+
+audio{
+margin-top:20px;
+width:80%;
+max-width:500px;
+}
+
+/* Button */
+
+button{
+padding:18px 45px;
+font-size:22px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+background:linear-gradient(45deg,#ff4d6d,#ff758f);
+color:white;
+font-weight:bold;
+margin:40px;
+transition:.4s;
+}
+
+button:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px #ff758f;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.header h1{
+font-size:38px;
+}
+
+.header p{
+font-size:18px;
+}
+
+.memory{
+font-size:18px;
+}
+
+.gallery img{
+height:60vh;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<audio id="player" autoplay controls></audio>
+
+<div class="header">
+
+<h1>❤️ Our Beautiful Memories ❤️</h1>
+
+<p>
+
+Every photo holds a piece of our story.
+
+Every memory brings you closer to me.
+
+Even though you are far away,
+you are always in my heart.
+
+❤️
+
+</p>
+
+</div>
+
+<div class="gallery">
+
+<img id="slide" src="img1.jpeg">
+
+<div class="caption" id="caption">
+
+👶 Childhood Days
+
+</div>
+
+<div class="counter" id="counter">
+
+1 / 12
+
+</div>
+
+</div>
+
+<div class="memory">
+
+Anna,
+
+These photos are not just pictures.
+
+They are moments of our lives.
+
+Moments that remind me of childhood laughter,
+family celebrations,
+funny memories,
+and the countless times we spent together.
+
+Now you are far away,
+living in another country.
+
+But whenever I look at these memories,
+it feels like you are right beside me.
+
+I miss you more than words can explain.
+
+❤️
+
+</div>
+
+<button onclick="window.location.href='letter.html'">
+
+💌 Read My Letter To Anna
+
+</button>
+
+<script>
+
+/* Hearts */
+
+for(let i=0;i<40;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.animationDuration=
+(6+Math.random()*8)+"s";
+
+heart.style.animationDelay=
+Math.random()*5+"s";
+
+document.body.appendChild(heart);
+
+}
+
+/* Music Playlist */
+
+const songs = [
+
+"song1.mpeg",
+"song2.mpeg",
+"song3.mpeg"
+
+];
+
+const player = document.getElementById("player");
+
+let currentSong = 0;
+
+player.src = songs[currentSong];
+
+player.addEventListener("ended",()=>{
+
+currentSong++;
+
+if(currentSong < songs.length){
+
+player.src = songs[currentSong];
+player.play();
+
+}
+
+});
+
+/* Images */
+
+const images = [
+
+"img1.jpeg",
+"img2.jpeg",
+"img3.jpeg",
+"img4.jpeg",
+"img5.jpeg",
+"img6.jpeg",
+"img7.jpeg",
+"img8.jpeg",
+"img9.jpeg",
+"img10.jpeg",
+"img11.jpeg",
+"img12.jpeg"
+
+];
+
+const captions = [
+
+"👶 Childhood Days",
+"🧸 Little Brother Memories",
+"🏠 Family Moments",
+"🎉 Happy Times Together",
+"📚 School Memories",
+"😄 Funny Moments",
+"❤️ Precious Bond",
+"🌟 Growing Together",
+"🎊 Family Celebrations",
+"🤝 My Hero Anna",
+"✈️ Chasing Dreams Abroad",
+"🎂 Happy Birthday Anna"
+
+];
+
+let current = 0;
+
+setInterval(()=>{
+
+current++;
+
+if(current >= images.length){
+
+current = 0;
+
+}
+
+document.getElementById("slide").src =
+images[current];
+
+document.getElementById("caption").innerHTML =
+captions[current];
+
+document.getElementById("counter").innerHTML =
+(current + 1) + " / " + images.length;
+
+},6000);
+
+</script>
+
+</body>
+</html>
