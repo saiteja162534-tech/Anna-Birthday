@@ -7,7 +7,7 @@
 
 <title>Our Memories ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -59,7 +59,7 @@ border-radius:50%;
 
 filter:blur(80px);
 
-opacity:.4;
+opacity:.35;
 
 animation:move 10s infinite alternate;
 
@@ -131,13 +131,32 @@ z-index:5;
 
 .title{
 
-font-family:'Great Vibes',cursive;
+font-family:'Cormorant Garamond',serif;
 
-font-size:75px;
+font-size:80px;
+
+font-weight:600;
 
 color:#1e3a8a;
 
-margin-bottom:15px;
+line-height:1.1;
+
+}
+
+/* ANNA */
+
+.anna{
+
+font-family:'Alex Brush',cursive;
+
+font-size:90px;
+
+color:#2563eb;
+
+margin-top:5px;
+
+text-shadow:
+0 5px 15px rgba(37,99,235,.25);
 
 }
 
@@ -148,6 +167,8 @@ margin-bottom:15px;
 font-size:22px;
 
 color:#475569;
+
+margin-top:20px;
 
 margin-bottom:30px;
 
@@ -167,7 +188,7 @@ align-items:center;
 
 }
 
-/* Image */
+/* Images */
 
 .slideshow img{
 
@@ -186,23 +207,6 @@ background:white;
 border-radius:25px;
 
 padding:10px;
-
-border:4px solid rgba(255,255,255,.8);
-
-box-shadow:
-0 10px 30px rgba(0,0,0,.15);
-
-transition:1s;
-
-}
-
-object-fit:contain;
-
-background:white;
-
-border-radius:25px;
-
-padding:8px;
 
 border:4px solid rgba(255,255,255,.8);
 
@@ -305,6 +309,10 @@ display:none;
 font-size:55px;
 }
 
+.anna{
+font-size:65px;
+}
+
 .subtitle{
 font-size:18px;
 }
@@ -342,7 +350,11 @@ max-height:65vh;
 <div class="container">
 
 <div class="title">
-Our Memories ❤️
+Beautiful Memories
+</div>
+
+<div class="anna">
+Anna ❤️
 </div>
 
 <div class="subtitle">
@@ -414,18 +426,18 @@ const images=[
 
 const captions=[
 
-"👶 Childhood Days",
+"👶 Childhood pic",
 "🧸 Beautiful Memories",
-"🏡 Family Moments",
+"two little brothers",
 "🎉 Happy Smiles",
-"Uuforgotable Memories",
-"😄 Dream Places",
+"📚 unforgotable Memories",
+"😄Dream Place ",
 "❤️ Precious Bond",
 "🌟 Growing Together",
-"🎊 Memories till my life",
-"🤝  Dreams & Succes",
-"✈️ My Inspiration More Than God",
-"🎂 Happy Birthday ANNA"
+"🎊 Lovely Memories ",
+"🤝 blood❤️ ",
+"✈️ Emotinal time",
+"🎂 Happy Birthday Anna"
 
 ];
 
@@ -444,17 +456,21 @@ const caption=document.getElementById("caption");
 
 const counter=document.getElementById("counter");
 
-/* Music */
-
 const player=document.getElementById("musicPlayer");
 
 let currentSong=0;
 
 player.src=songs[currentSong];
 
-player.play();
+/* Mobile + PC Audio */
 
-/* Continue Songs */
+if(localStorage.getItem("musicAllowed")==="true"){
+
+player.play().catch(()=>{});
+
+}
+
+/* Song Loop */
 
 player.addEventListener("ended",()=>{
 
@@ -470,7 +486,7 @@ if(current<images.length-1){
 
 player.src=songs[currentSong];
 
-player.play();
+player.play().catch(()=>{});
 
 }
 
